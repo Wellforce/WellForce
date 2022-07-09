@@ -4,7 +4,7 @@ Pod Members: Abdirahman Ali^2 Ikenna Onuorah
 
 ## Problem Statement
 
-Salesforce as a company values wellness but none of the employees can connect with each other using their wellness goals
+Salesforce as a company values wellness in its company culture, but none of the employees can connect and support each other through their wellness goals
 
 ## Description
 
