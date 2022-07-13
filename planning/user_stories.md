@@ -5,6 +5,7 @@ Pod Members: **Add Pod Members Names**
 ## Problem Statement
 
 Insert your groups problem statement and target audience.
+Salesforce prides itself on wellness culture and the wellness of its employees but their is not a way to connect with other salesforce employees based on your wellness needs
 
 ## User Roles
 
@@ -13,7 +14,7 @@ Include at least at least 1, but no more than 3, user roles
 ## User Personas
 
 Include at least 2 personas per User Role
-
+Thomas just grew up in Minnesota and got into boxing at a young age his boxing mentor taught him how to meditate and how to properly weightlift. Thomas just got hired as a salesforce employee and without his mentor its going to be a bit harder to stick to his wellness goals without his mentor being in san francisco with him
 ## User Stories
 
 1. As a salesforce employee I want to find other salesforce employees with the same wellness goals as me to improve my physical wellbeing.
