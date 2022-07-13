@@ -24,7 +24,7 @@ Thomas just grew up in Minnesota and got into boxing at a young age his boxing m
 5. As a salesforce employee I want to be able to journal my progress and wellness tasks on my journey to my best self.
 6. As an employee who is looking for a wellness partner I want to be able to contact other potential wellness partners through Slack/Contacts to connect with that partner for future wellness actiity sessions.
 
-1. **As a [user role], I want to [what], so that [why]**
+
 
 ## Wireframe (Bonus)
 
