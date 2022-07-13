@@ -26,9 +26,9 @@ Thomas just grew up in Minnesota and got into boxing at a young age his boxing m
 
 # FEEDBACK
 
-1.Consider group wellness activities.
-2.Stretch-implement ways for user to join group activities
-3.Stretch- Implement way to accept or decline potential wellness partner
+1.  Consider group wellness activities.
+2.  Stretch-implement ways for user to join group activities
+3.  Stretch- Implement way to accept or decline potential wellness partner
 
 
 ## Wireframe (Bonus)
