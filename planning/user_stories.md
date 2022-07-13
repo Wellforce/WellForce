@@ -16,7 +16,8 @@ Include at least 2 personas per User Role
 
 ## User Stories
 
-Include at least 10 user stories.
+1. As a salesforce employee I want to find other salesforce employees with the same wellness goals as me to improve my physical self
+2. As a salesforce employee I want to find other salesforce employeeswellness partner to take place in yoga activities with me.
 
 1. **As a [user role], I want to [what], so that [why]**
 
