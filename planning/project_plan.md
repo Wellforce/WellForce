@@ -1,9 +1,9 @@
 # Project Plan
 
-Pod Members: **Add Pod Members Names**
+Pod Members: **Abdirahman Ali^2 and Ikenna Onuora**
 
 ## Problem Statement and Description
-
+Salesforce employees would have a website to find other salesforce employees with similar wellness preferences as them
 
 ## User Roles and Personas
 
