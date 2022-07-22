@@ -37,6 +37,7 @@ User Table
 
 id
 Serial Primary Key
+
 password
 TEXT NOT NULL
 
