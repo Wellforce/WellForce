@@ -9,6 +9,8 @@ Salesforce employees would have a website to find other salesforce employees wit
 
 Johnny has been working in salesforce for a decade but he recently moved to a new team in a different state and as he moved he also moved away from all of his friends at his old location, these friends would be people he would run with. People he would go to the gym with and a multitude of other wellness activities. When he came to his new location he wanted to make new friends so he went on our wellness app so he could make new friends while being on track for his wellness goals.
 
+Christy is a new grad that came from her home town and recently got a new grad offer from salesforce. Where her wellness mentor used to teach her wellness activities and would motivate her to do her wellness activities every day when she went to a new state her mentor told her that the best thing that she could do is find a wellness partner so she went on our website.
+
 ## User Stories
 
 1. As a salesforce employee I want to find other salesforce employees with the same wellness goals as me to improve my physical wellbeing.
