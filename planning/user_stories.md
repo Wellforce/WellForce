@@ -25,6 +25,11 @@ Johnny has been working in salesforce for a decade but he recently moved to a ne
 4. as a salesforce employee I want to be able to add wellness activies that aren't shown on the list.
 5. As a salesforce employee I want to be able to journal my progress and wellness tasks on my journey to my best self.
 6. As an employee who is looking for a wellness partner I want to be able to contact other potential wellness partners through Slack/Contacts to connect with that partner for future wellness actiity sessions.
+7. As a user I want to be able to sign up to make a WellForce account.
+8. As a user I want to be able to login to my WellForce account and input my email and password in their corresponding fields.
+9. As a user I want to be able to register for a WellForce account entering all required information like First name, Last Name, Email, Password, and Confirm Password.
+10. As a developer I want a reference document about the data models so that I can comply with our team's standard to prepare for integration between the frontend and backend
+11. As a frontend developer I want to be able for my register post requests to post on insomnia so that I can later make the front end register page and connect them up
 
 # FEEDBACK
 
