@@ -8,7 +8,7 @@ Insert the latest summary of your problem statement and app description.
 
 ## User Roles and Personas
 
-Include the most up-to-date user roles and personas.
+Johnny has been working in salesforce for a decade but he recently moved to a new team in a different state and as he moved he also moved away from all of his friends at his old location, these friends would be people he would run with. People he would go to the gym with and a multitude of other wellness activities. When he came to his new location he wanted to make new friends so he went on our wellness app so he could make new friends while being on track for his wellness goals.
 
 ## User Stories
 
