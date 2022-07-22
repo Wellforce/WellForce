@@ -4,7 +4,6 @@ Pod Members: **Add Pod Members Names**
 
 ## Problem Statement and Description
 
-Insert the latest summary of your problem statement and app description.
 
 ## User Roles and Personas
 
@@ -22,6 +21,12 @@ Johnny has been working in salesforce for a decade but he recently moved to a ne
 ## Pages/Screens
 
 List all the pages and screens in the app. Include wireframes for at least 3 of them.
+https://www.figma.com/file/60HXbrvEZPITZG4yywvPZG/WellForce-Application?node-id=0%3A1
+Home page
+register 
+log in
+preferences page
+activity
 
 ## Data Model
 
