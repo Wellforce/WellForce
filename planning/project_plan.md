@@ -12,12 +12,12 @@ Johnny has been working in salesforce for a decade but he recently moved to a ne
 
 ## User Stories
 
-As a salesforce employee I want to find other salesforce employees with the same wellness goals as me to improve my physical wellbeing.
-As a salesforce employee I want to find a wellness partner to take place in activities with me so that I could build more self confidence and a community within the company.
-As a salesforce employee I want to see a list of other employees that best match my wellness/fitness interests.
-as a salesforce employee I want to be able to add wellness activies that aren't shown on the list.
-As a salesforce employee I want to be able to journal my progress and wellness tasks on my journey to my best self.
-As an employee who is looking for a wellness partner I want to be able to contact other potential wellness partners through Slack/Contacts to connect with that partner for future wellness actiity sessions.
+1. As a salesforce employee I want to find other salesforce employees with the same wellness goals as me to improve my physical wellbeing.
+2. As a salesforce employee I want to find a wellness partner to take place in activities with me so that I could build more self confidence and a community within the company.
+3. As a salesforce employee I want to see a list of other employees that best match my wellness/fitness interests.
+4. As a salesforce employee I want to be able to add wellness activies that aren't shown on the list.
+5. As a salesforce employee I want to be able to journal my progress and wellness tasks on my journey to my best self.
+6. As an employee who is looking for a wellness partner I want to be able to contact other potential wellness partners through Slack/Contacts to connect    with that partner for future wellness actiity sessions.
 
 ## Pages/Screens
 
