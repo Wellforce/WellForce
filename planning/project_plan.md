@@ -20,7 +20,79 @@ List all the pages and screens in the app. Include wireframes for at least 3 of 
 
 ## Data Model
 
-Describe your app's data model using diagrams or tables
+
+User Table
+
+id
+Serial Primary Key
+password
+TEXT NOT NULL
+
+
+first_name
+TEXT NOT NULL
+
+
+last_name
+TEXT NOT NULL
+
+
+email
+TEXT NOT NULL UNIQUE CHECK (POSITION('@' IN EMAIL) > 1)
+
+
+Location 
+TEXT NOT NULL
+
+
+
+
+
+Activity Table 
+
+id
+Serial Primary Key
+Meditation
+Integer NOT NULL DEFAULT 0
+
+
+Journalism
+
+
+Integer NOT NULL DEFAULT 0
+
+
+Yoga
+Integer NOT NULL DEFAULT 0
+
+
+Resistance Training
+Integer NOT NULL DEFAULT 0
+
+
+Running
+Integer NOT NULL DEFAULT 0
+
+
+
+
+
+
+
+
+Preferences Table
+
+Id 
+Serial Primary Key
+User_id
+INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE
+Activity_id
+INTEGER NOT NULL REFERENCES Activity(id) ON DELETE CASCADE
+
+
+
+
+
 
 ## Endpoints
 
