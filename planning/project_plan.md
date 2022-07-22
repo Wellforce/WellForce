@@ -98,4 +98,21 @@ INTEGER NOT NULL REFERENCES Activity(id) ON DELETE CASCADE
 
 List the API endpoints you will need to implement.
 
+Working and Finishing the endpoints 
+CRUD ,HTTP VERB, DESCRIPTION, USER STORIES
+CREATE, POST , To create a new user account, 3
+UPDATE, PUT, To update the user preferences, 1
+CREATE, POST, User chooses preferences and submits them, 1
+READ, GET, Takes preferences submitted and posts them to the activity matching pages, 1
+
+
+
+
+
+
+
+
+
+
+
 ***Don't forget to set up your Issues, Milestones, and Project Board!***
