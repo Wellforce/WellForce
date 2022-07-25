@@ -16,7 +16,7 @@ import SignUp from './register';
 import SignIn from './Login/log-in';
 // import AppRouter from './AppRouter';
 import { useNavigate, Link } from "react-router-dom"
-
+console.log("in register")
 
 // useEffect(() => {
 //   // if user is already logged in,
@@ -131,20 +131,22 @@ export default function Navbar({setIsLoggedin,isLoggedin}){
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-                <a href={`http://localhost:3000/${page}`} target="_blank" rel="noreferrer" >
+                // <a href={`http://localhost:3001/${page}`} target="_blank" rel="noreferrer" >
+               
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                 <Link className="buttons" to = {`/${page}`}> {page}</Link>
+               
               </Button>
-              </a>
+              // </a>
 
             ))}
           </Box>
        
-          {isLoggedin ? 
+          {/* {isLoggedin ?  */}
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -168,17 +170,20 @@ export default function Navbar({setIsLoggedin,isLoggedin}){
               onClose={handleCloseUserMenu}
             > 
               {settings.map((setting) => (
-                   <a href={`http://localhost:3000/`} target="_blank" rel="noreferrer" >
-            
+                  //  <a href={`http://localhost:3001/`} target="_blank" rel="noreferrer" >
+                 
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                   <Link className="buttons" to = {`/`}>
+               {setting}
+                </Link>
+                  {/* <Typography textAlign="center">{setting}</Typography> */}
                 </MenuItem>
-                  </a>
+                  // </a>
               ))}
               
             </Menu>
           </Box>
-          :  ""}
+          {/* :  ""} */}
         </Toolbar>
       </Container>
     </AppBar>
