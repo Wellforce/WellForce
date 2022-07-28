@@ -14,6 +14,7 @@ import Navbar from './Navbar';
 // import Activity from './activity';
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import axios from 'axios';
+import Preference from './Preferences/Preferences';
 function App() {
   const [count, setCount] = useState(0)
   const [user, setUser] = useState({})
@@ -77,6 +78,7 @@ return (
       <Route path="/" setUser = {setUser} user = {user} element={<Home />} />
       <Route path="/register" element={<SignUp setUser = {setUser} user = {user}  setIsLoggedin = {setIsLoggedin} isLoggedin = {isLoggedin}/>} />
       <Route path="/log-in" element={<SignIn />} />
+      <Route path="/preference" element={<Preference />} />
       {/* <Route path="/activity" element={<Activity setIsLoggedin = {setIsLoggedin} isLoggedin = {isLoggedin} />} /> */}
       </Routes>
   
