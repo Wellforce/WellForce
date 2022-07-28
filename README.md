@@ -2,22 +2,22 @@
 
 # SITE Capstone Project
 
-SITE Course Year: **20__**
+SITE Course Year: **2022**
 
-Cohort: **Add Company Sponsor Name**
+Cohort: **SALESFORCE**
 
-Team Member Names:**Insert Team Member Names**
+Team Member Names:**Abdirahman Ali, Abdirahman Ali, Ikenna Onuorah**
 
-Mentors Names: **Insert Professional Mentor Names**
+Mentors Names: **Patrick Ayertey**
 
 Project Code Repository Links
 
-* [Frontend Repo Link]()
-* [Backend Repo Link]()
+- [Frontend Repo Link]()
+- [Backend Repo Link]()
 
 ## Project Overview
 
-Add a quick summary of what your project theme and objectives are. 
+Add a quick summary of what your project theme and objectives are.
 
 Deployment Website: **Add Link to Deployed Project**
 

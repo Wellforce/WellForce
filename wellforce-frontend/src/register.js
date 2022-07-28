@@ -1,36 +1,37 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import * as React from "react";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import Link from "@mui/material/Link";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
 import axios from "axios";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {useNavigate} from "react-router-dom"
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        WellForce
-      </Link>{' '}
+        LifeTracker
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
-
-
-
-
 
 const theme = createTheme();
 
@@ -38,7 +39,7 @@ export default function SignUp() {
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
+
     const data = new FormData(event.currentTarget);
     const user = {
       email: data.get("email"),
@@ -46,14 +47,13 @@ export default function SignUp() {
       userName: data.get("userName"),
       firstName: data.get("firstName"),
       lastName: data.get("lastName"),
-
     };
-  
+
     console.log(user);
     const res = await axios.post("http://localhost:3001/auth/register", user);
-    if (res?.data?.user){
-      navigate("/Login")
-    } 
+    if (res?.data?.user) {
+      navigate("/preferences");
+    }
     console.log({
       email: data.get("email"),
       password: data.get("password"),
@@ -66,18 +66,23 @@ export default function SignUp() {
         <Box
           sx={{
             marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Register
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box
+            component="form"
+            noValidate
+            onSubmit={handleSubmit}
+            sx={{ mt: 3 }}
+          >
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -133,7 +138,9 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
+                  control={
+                    <Checkbox value="allowExtraEmails" color="primary" />
+                  }
                   label="I want to receive inspiration, marketing promotions and updates via email."
                 />
               </Grid>
@@ -161,10 +168,6 @@ export default function SignUp() {
   );
 }
 
-
-
-
-
 // import { useEffect, useState } from "react"
 // import { useNavigate, Link } from "react-router-dom"
 // // import apiClient from "./services/apiClient"
@@ -184,7 +187,6 @@ export default function SignUp() {
 //     username:"",
 //   })
 //   // const [isLoggedin, setIsLoggedin] = useState(false)
-
 
 //   useEffect(() => {
 //     // if user is already logged in,
@@ -243,8 +245,7 @@ export default function SignUp() {
 //         last_name: form.last_name,
 //         username: form.username
 //       })
-      
-      
+
 //       console.log("line 75")
 //       console.log("res.data.user?",res.data.user)
 //       if (res?.data?.user) {
@@ -285,7 +286,7 @@ export default function SignUp() {
 //             />
 //             {errors.email && <span className="error">{errors.email}</span>}
 //           </div>
-        
+
 //            <div className="input-field">
 //             <label htmlFor="First Name">First Name</label>
 //             <input
@@ -308,7 +309,7 @@ export default function SignUp() {
 //               onChange={handleOnInputChange}
 //             />
 //             {errors.email && <span className="error">{errors.email}</span>}
-//           </div> 
+//           </div>
 
 //           <div className="input-field">
 //             <label htmlFor="Username">Username</label>
@@ -350,9 +351,7 @@ export default function SignUp() {
 //             {isLoggedin ? <a href= {`http://localhost:3000/activity`}></a> : ""}
 //           </button>
 //         </div>
-        
-        
-        
+
 //         <div className="footer">
 //           <p>
 //             Already have an account? Login <Link to="/login">here</Link>

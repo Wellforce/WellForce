@@ -1,18 +1,12 @@
 const express = require("express");
-const { UnauthorizedError, BadRequestError } = require(`../utils/error.js`);
+const { UnauthorizedError, BadRequestError } = require(`../utils/error`);
 const db = require("../db");
 const bcrypt = require("bcrypt");
 
+class activity {
+  //I need to post my information into a sql table that brings together the id of the activity and the user
 
-class UserActivityPref{
-
-
-//I need to post my information into a sql table that brings together the id of the activity and the user
-
-
-
-
-  static async formatNutrition(nutrition) {
+  static async formatActivity(activity) {
     return {
       user_id: nutrition.user_id,
       id: nutrition.id,
@@ -76,26 +70,4 @@ class UserActivityPref{
   }
 }
 
-module.exports = UserActivityPref;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = activity;
