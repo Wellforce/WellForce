@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
   res.send("auth route works");
 });
 
-router.post("/login", async (req, res, next) => {
+router.post("/log-in", async (req, res, next) => {
   try {
     const user = await User.login(req.body);
     const token = createUserJwt(user);
