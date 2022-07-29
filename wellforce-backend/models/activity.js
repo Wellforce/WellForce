@@ -1,28 +1,51 @@
-const express = require("express");
-const { UnauthorizedError, BadRequestError } = require(`../utils/error`);
+const {
+  BadRequestError,
+  UnauthorizedError,
+  NotFoundError,
+} = require("../utils/error");
 const db = require("../db");
-const bcrypt = require("bcrypt");
+const User = require("../models/user");
 
-class activities {
-  //I need to post my information into a sql table that brings together the id of the activity and the user
+class Activities {
+  static async createActivities(data) {
+    const requiredFields = ["activity"];
+    requiredFields.forEach((element) => {
+      if (!data.hasOwnProperty(element)) {
+        throw new BadRequestError(`Missing ${element} in request body`);
+      }
+    });
 
-  static async formatActivity(activities) {
-    return {
-      user_id: activities.user_id,
-      id: activities.id,
-    };
-  }
-  static async getActivities(userId) {
+    // const user = await User.fetchUserByEmail(data.email);
+    // const user_id = user.id;
+
     const result = await db.query(
-      `
-        SELECT *
-        FROM activities
-        WHERE user_id = $1;
-        `,
-      [userId]
+      `INSERT INTO activities(
+                    activity
+                )
+                VALUES ($1)
+                RETURNING id, activity
+                `,
+      [data.activity]
     );
-    return result.rows;
+
+    const activityData = result.rows[0];
+    return activityData;
+  }
+
+  static async fetchActivityById(id) {
+    if (!id) {
+      throw new BadRequestError("Need Valid Id");
+    }
+
+    const query = `SELECT * FROM activities WHERE id = $1`;
+    const result = await db.query(query, [id]);
+    if (result.rows.length <= 0) {
+      throw new NotFoundError("ID Not Found");
+    }
+
+    const activity = result.rows[0];
+    return activity;
   }
 }
 
-module.exports = activities;
+module.exports = Activities;
