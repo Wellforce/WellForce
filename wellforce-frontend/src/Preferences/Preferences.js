@@ -55,6 +55,79 @@ export default function Preference() {
     if (count > 5) {
       setPrefCap(true);
     }
+    console.log("count:", count);
+    return (
+      <div className="App">
+        Select your Preferences(Please choose up to 5):
+        <div className="activity">
+          <input
+            type="checkbox"
+            id="topping"
+            name="topping"
+            value="Paneer"
+            checked={isChecked1}
+            onChange={handleOnChange1}
+          />
+          meditation
+        </div>
+        <div className="activity">
+          <input
+            type="checkbox"
+            id="toppings"
+            name="toppings"
+            value="Paneers"
+            checked={isChecked2}
+            onChange={handleOnChange2}
+          />
+          Yoga
+        </div>
+        <div className="activity">
+          <input
+            type="checkbox"
+            id="topping"
+            name="topping"
+            value="Paneer"
+            checked={isChecked3}
+            onChange={handleOnChange3}
+          />
+          Journaling
+        </div>
+        <div className="activity">
+          <input
+            type="checkbox"
+            id="topping"
+            name="topping"
+            value="Paneer"
+            checked={isChecked4}
+            onChange={handleOnChange4}
+          />
+          Cardio
+        </div>
+        <div className="activity">
+          <input
+            type="checkbox"
+            id="topping"
+            name="topping"
+            value="Paneer"
+            checked={isChecked5}
+            onChange={handleOnChange5}
+          />
+          Dancing
+        </div>
+        <div className="activity">
+          <input
+            type="checkbox"
+            id="topping"
+            name="topping"
+            value="Paneer"
+            checked={isChecked6}
+            onChange={handleOnChange6}
+          />
+          Strength Training
+        </div>
+        <button onSubmit={handleOnSubmit}> submit form</button>
+      </div>
+    );
   }
   console.log("count:", count);
   return (
