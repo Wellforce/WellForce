@@ -1,8 +1,7 @@
 const express = require("express");
-const { UnauthorizedError, BadRequestError } = require(`../utils/error.js`);
+const { UnauthorizedError, BadRequestError } = require(`../utils/error`);
 const db = require("../db");
 const bcrypt = require("bcrypt");
-
 
 class UserActivityPref{
 
@@ -17,26 +16,4 @@ class UserActivityPref{
 }
 }
 
-module.exports = UserActivityPref;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = activity;
