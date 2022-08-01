@@ -74,7 +74,7 @@ export default function Preference() {
             checked={isChecked1}
             onChange={handleOnChange1}
           />
-          Mindfulness meditation
+         meditation
         </div>
         <div className="activity">
           <input
@@ -85,7 +85,7 @@ export default function Preference() {
             checked={isChecked2}
             onChange={handleOnChange2}
           />
-          spiritual meditation
+         Yoga
         </div>
         <div className="activity">
           <input
@@ -96,7 +96,7 @@ export default function Preference() {
             checked={isChecked3}
             onChange={handleOnChange3}
           />
-          Paneer
+         Journaling
         </div>
         <div className="activity">
           <input
@@ -107,7 +107,7 @@ export default function Preference() {
             checked={isChecked4}
             onChange={handleOnChange4}
           />
-          Paneer
+          Cardio
         </div>
         <div className="activity">
           <input
@@ -118,7 +118,7 @@ export default function Preference() {
             checked={isChecked5}
             onChange={handleOnChange5}
           />
-          Paneer
+          Dancing
         </div>
         <div className="activity">
           <input
@@ -129,7 +129,7 @@ export default function Preference() {
             checked={isChecked6}
             onChange={handleOnChange6}
           />
-          Paneer
+          Strength Training
         </div>
         <button onSubmit= {handleOnSubmit}> submit form</button>
       </div>

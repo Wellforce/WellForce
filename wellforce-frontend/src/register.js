@@ -52,7 +52,7 @@ export default function SignUp() {
     console.log(user);
     const res = await axios.post("http://localhost:3001/auth/register", user);
     if (res?.data?.user){
-      navigate("/Login")
+      navigate("/preference")
     } 
     console.log({
       email: data.get("email"),

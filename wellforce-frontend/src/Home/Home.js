@@ -31,9 +31,17 @@ export default function Home({ user, isFetching, posts, addPost, error }) {
            
           <div class="Landing">
             <div class="hero">
-            
+            <img  class = "img"
+                  src="	https://blog.bonus.ly/hubfs/group-of-employees-meditating.png"
+                  width = "500"
+                  height = "500"
+                  left = "300"
+                  alt="Fitness"
+                
+            ></img>
              
-              <p>Wellness </p>
+              <p class="para">A Standford Study shows that a collobarative approach gives collaborators increased motivation on the task at hand so Wellness activities are best when done with others </p>
+              
             </div>
             <footer class = "site-footer">
                 
@@ -45,23 +53,25 @@ export default function Home({ user, isFetching, posts, addPost, error }) {
                   height = "58"
                   alt="Fitness"
                 ></img>
-                <p>Fitness</p>
+                <p>Choose your activities</p>
               </div>
               <div class="tile">
                 <img
-                  src="https://icon-library.com/icon/match-icon-4.html"
+                  src="https://cdn4.vectorstock.com/i/1000x1000/58/38/two-cartoon-women-playing-volleyball-isolated-vector-29325838.jpg"
                   alt="Food"
                   width = "58"
                   height = "58"
                 ></img>
-                <p>Food</p>
+                <p>See your Matches</p>
               </div>
               <div class="tile">
                 <img
                   src="http://codepath-lifetracker.surge.sh/static/media/icons8-resting-100.81067336.svg"
                   alt="Rest"
                 ></img>
-                <p>Rest</p>
+                <p >Pick Your Preference</p>
+
+
               </div>
             
             </div>

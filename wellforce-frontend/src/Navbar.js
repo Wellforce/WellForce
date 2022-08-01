@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import SignUp from './register';
 import SignIn from './Login/log-in';
+
 // import AppRouter from './AppRouter';
 import { useNavigate, Link } from "react-router-dom"
 console.log("in register")
@@ -28,7 +29,7 @@ console.log("in register")
 // }, [user, navigate])
 
 const pages = ['register', 'log-in'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Edit Preferences', 'Logout'];
 
 export default function Navbar({setIsLoggedin,isLoggedin}){
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -51,10 +52,11 @@ export default function Navbar({setIsLoggedin,isLoggedin}){
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" color="">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+       
           <Typography
             variant="h6"
             noWrap
@@ -70,6 +72,11 @@ export default function Navbar({setIsLoggedin,isLoggedin}){
               textDecoration: 'none',
             }}
           >
+               {/* <img      width = "10"
+                  height = "10" 
+                  src= "test.png">
+
+                  </img> */}
             LOGO
           </Typography>
 
@@ -136,7 +143,7 @@ export default function Navbar({setIsLoggedin,isLoggedin}){
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'blue', display: 'block' }}
               >
                  <Link className="buttons" to = {`/${page}`}> {page}</Link>
                
