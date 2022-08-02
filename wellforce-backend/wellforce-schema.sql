@@ -11,12 +11,13 @@ updated_at  TIMESTAMP DEFAULT NOW()
 
 CREATE TABLE activities(
     id SERIAL PRIMARY KEY,
-    activity TEXT NOT NULL UNIQUE
+    name TEXT NOT NULL UNIQUE
 );
 
 CREATE TABLE preferences(
     id SERIAL PRIMARY KEY,
-    activity_id INTEGER REFERENCES activities(id)
+    user_id INTEGER REFERENCES users(id),
+    activity_name TEXT REFERENCES activities(name)
     
 
 );
