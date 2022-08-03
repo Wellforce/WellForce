@@ -7,3 +7,6 @@ CREATE DATABASE wellforce;
 
 
 \i wellforce-schema.sql
+\i wellforce-seed.sql
+
+
