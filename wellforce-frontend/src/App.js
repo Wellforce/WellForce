@@ -27,7 +27,7 @@ function App() {
       setIsFetching(true);
 
       try {
-        const res = await axios.get("http://localhost:3001/preferences");
+        const res = await axios.get("http://localhost:3000/preferences");
         if (res?.data?.posts1) {
           setError(null);
           setPosts(res.data.posts1);

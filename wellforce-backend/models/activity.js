@@ -10,4 +10,4 @@ class UserActivityPref {
   //I need to post my information into a sql table that brings together the id of the activity and the user
 }
 
-module.exports = Activities;
+module.exports = UserActivityPref;
