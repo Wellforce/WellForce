@@ -38,6 +38,7 @@ router.use((req, res, next) => {
 router.post("/", async (req, res, next) => {
   try {
     const user = res.locals.user
+    console.log(req.body);
     const Preference = await UserActivityPref.createPreference(req.body, user.id);
 
     //  const token = extractUserFromJwt(req.header.token);

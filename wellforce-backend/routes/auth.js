@@ -33,6 +33,7 @@ router.post("/register", async (req, res, next) => {
   } catch (error) {
     res.status(400).send(error);
     next(error);
+
   }
 
   router.get("/me", requireAuthenticatedUser, async (req, res, next) => {

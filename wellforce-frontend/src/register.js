@@ -25,7 +25,7 @@ function Copyright(props) {
     >
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        LifeTracker
+        Wellforce
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
