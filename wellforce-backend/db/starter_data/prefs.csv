@@ -1,16 +1,26 @@
 user_id, activity_name
-3,Cardio
-3,Journaling
-3,Yoga
-3,Dancing
-3,Soccer
-1,Cardio
-1,Journaling
-1,Yoga
-1,Dancing
+1,Basketball
 1,Soccer
-2,Cardio
-2,Bookclub
+1,Bookclub
+1,Breathwork
+1,Strength Training
 2,Yoga
-2,Basketball
+2,Cardio
+2,Dancing
+2,Meditation
 2,Soccer
+3,Bookclub
+3,Yoga
+3,Soccer
+3,Meditation
+3,Breathwork
+4,Breathwork
+4,Soccer
+4,Strength Training
+4,Meditation
+4,Basketball
+5,Dancing
+5,Strength Training
+5,Basketball
+5,Cardio
+5,Journaling
