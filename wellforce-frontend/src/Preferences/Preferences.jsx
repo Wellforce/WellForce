@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Preferences.css";
-import "../Services/apiClient";
+import ApiClient from "../Services/apiClient";
 export default function Preference() {
   const [checked, setChecked] = useState([]);
   const checkList = [
@@ -40,10 +40,10 @@ export default function Preference() {
   var isChecked = (item) =>
     checked.includes(item) ? "checked-item" : "not-checked-item";
 
-  function handleOnSubmit(props) {
-    const user = { name: this.state.checked };
-    let obj = { name: user.name };
-    props.fetchPreferences(obj);
+  const checkedArray = checkedItems.split(',');
+
+  function handleOnSubmit() {
+    ApiClient.postPreferences(checkedArray);
   }
 
   return (
@@ -59,15 +59,15 @@ export default function Preference() {
           ))}
         </div>
       </div>
-
+            <div> {checkedArray}</div>
       <div>{`Activities checked are: ${checkedItems}`}</div>
       <div className="preference-button">
-        <Link to="/Matching">
-          {" "}
+ 
+          
           <button onClick={handleOnSubmit} className="preference">
             Submit
-          </button>{" "}
-        </Link>
+          </button>
+      
       </div>
     </div>
   );

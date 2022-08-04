@@ -1,5 +1,5 @@
 import axios from "axios";
-class ApiClient {
+ class ApiClient {
   constructor(remoteHostUrl) {
     this.remoteHostUrl = remoteHostUrl;
     this.token = null;
@@ -11,7 +11,7 @@ class ApiClient {
     localStorage.setItem(this.tokenName, token);
   }
 
-  async request({ endpoint, method = `GET`, data = {} }) {
+ async request({ endpoint, method = `GET`, data = {} }) {
     const url = `${this.remoteHostUrl}/${endpoint}`;
 
     const headers = {
@@ -33,7 +33,12 @@ class ApiClient {
   async fetchUserFromToken() {
     return await this.request({ endpoint: `auth/me`, method: `GET` });
   }
-  async fetchPreferences() {
-    return await this.request({ endpoint: `preference`, method: `POST`, data: `checked` });
+  async postPreferences(checkedArray) {
+    return await this.request({
+      endpoint: `preference`,
+      method: `POST`,
+      data: checkedArray,
+    });
   }
 }
+export default new ApiClient( "http://localhost:3001"); 
