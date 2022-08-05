@@ -59,15 +59,12 @@ export default function Preference() {
           ))}
         </div>
       </div>
-            <div> {checkedArray}</div>
-      <div>{`Activities checked are: ${checkedItems}`}</div>
+
+      <div className="display-checked">{`Activities checked are: ${checkedItems}`}</div>
       <div className="preference-button">
- 
-          
-          <button onClick={handleOnSubmit} className="preference">
-            Submit
-          </button>
-      
+        <button className="btn preference" onClick={handleOnSubmit}>
+          Submit
+        </button>
       </div>
     </div>
   );
