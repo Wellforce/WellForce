@@ -24,31 +24,31 @@ export default function Preference() {
     var count = 0;
     const handleOnChange1 = () => {
       setIsChecked1(!isChecked1);
-      isChecked1? count ++ : count--;
-      console.log("count:",count);
+      isChecked1? count++ : count--;
+      // console.log("count:",count);
     };
-    console.log("count:",count);
+    // console.log("count:",count);
     const handleOnChange2 = () => {
         setIsChecked2(!isChecked2);
-        isChecked1? count ++ : count--;
-        console.log("count:",count);
+        isChecked1? count++ : count--;
+        // console.log("count:",count);
       };
       const handleOnChange3 = () => {
         setIsChecked3(!isChecked3);
-        isChecked1? count ++ : count--;
-        console.log("count:",count);
+        isChecked1? count++ : count--;
+        // console.log("count:",count);
       };
       const handleOnChange4 = () => {
         setIsChecked4(!isChecked4);
-        isChecked1? count ++ : count--;
+        isChecked1? count++ : count--;
       };
       const handleOnChange5 = () => {
         setIsChecked5(!isChecked5);
-        isChecked1? count ++ : count--;
+        isChecked1? count++ : count--;
       };
       const handleOnChange6 = () => {
         setIsChecked6(!isChecked6);
-        isChecked1? count ++ : count--;
+        isChecked1? count++ : count--;
       };
     //   const handleOnChange7 = () => {
     //     setIsChecked7(!isChecked7);
