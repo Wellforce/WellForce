@@ -16,7 +16,7 @@ import SignUp from './register';
 import SignIn from './Login/log-in';
 
 // import AppRouter from './AppRouter';
-import { useNavigate, Link } from "react-router-dom"
+import {Link } from "react-router-dom"
 console.log("in register")
 
 // useEffect(() => {
@@ -55,6 +55,7 @@ export default function Navbar({setIsLoggedin,isLoggedin}){
     <AppBar position="static" color="">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
        
           <Typography
@@ -148,10 +149,14 @@ export default function Navbar({setIsLoggedin,isLoggedin}){
                  <Link className="buttons" to = {`/${page}`}> {page}</Link>
                
               </Button>
+          
               // </a>
 
             ))}
           </Box>
+          <Link className="buttons" to="/Matches">
+              Matches
+            </Link>
        
           {/* {isLoggedin ?  */}
           <Box sx={{ flexGrow: 0 }}>
