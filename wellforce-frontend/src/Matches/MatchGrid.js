@@ -1,22 +1,14 @@
 import React from 'react'
-import MatchCard from './Matches/MatchCard';
+import MatchCard from './MatchCard';
 
 export default function MatchGrid({}) {
+  //first have information then .map 
   return (
-    <div>MatchGrid
-        <Grid container/>
-    <Grid item xs={6}>
-      <MatchCard />
-    </Grid>
-    <Grid item xs={6}>
-      <MatchCard />
-    </Grid>
-    <Grid item xs={6}>
-      <MatchCard />
-    </Grid>
-    <Grid item xs={6}>
-      <MatchCard />
-    </Grid>
+    <div> 
+      <h1>
+        Matches
+      </h1>
+    
   
     </div>
   )

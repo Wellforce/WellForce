@@ -59,7 +59,7 @@ export default function Preference() {
           ))}
         </div>
       </div>
-            <div> {checkedArray}</div>
+   
       <div>{`Activities checked are: ${checkedItems}`}</div>
       <div className="preference-button">
  
