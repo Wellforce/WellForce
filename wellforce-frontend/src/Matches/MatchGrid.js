@@ -2,13 +2,11 @@ import React from 'react'
 import MatchCard from './MatchCard';
 
 export default function MatchGrid({}) {
-  //first have information then .map 
+  //look at a completed version the second project 
+  //  map function to map the product cards into the product grid
   return (
-    <div> 
-      <h1>
-        Matches
-      </h1>
-    
+    <div>MatchGrid
+       
   
     </div>
   )
