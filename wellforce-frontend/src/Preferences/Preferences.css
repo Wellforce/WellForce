@@ -1,0 +1,69 @@
+.title {
+  font-size: 22px;
+  margin-bottom: 40px;
+}
+.list-container {
+  width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: inital;
+  gap: 20px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  
+  
+}
+.checked-item,
+.not-checked-item {
+  margin-left: 10px;
+}
+.checked-item {
+  text-decoration: line-through;
+  border: 2px solid black;
+  background-color: #0D9DDA;
+  color: black;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+/* .checked-item {
+  border-color: #04AA6D;
+  color: black;
+  margin-bottom: 20px;
+} */
+
+.checked_item:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+.display-checked {
+    margin-bottom: 40px;
+}
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Green */
+.preference {
+  border-color: #04AA6D;
+  color: green;
+}
+
+.preference:hover {
+  background-color: #04AA6D;
+  color: white;
+}
