@@ -73,3 +73,7 @@
     height: 100px;
     width: 100%;
   }
+
+  .Button{
+    background-image: linear-gradient(to left, blue);
+  }
