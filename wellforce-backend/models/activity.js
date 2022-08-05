@@ -1,7 +1,10 @@
-const express = require("express");
-const { UnauthorizedError, BadRequestError } = require(`../utils/error`);
+const {
+  BadRequestError,
+  UnauthorizedError,
+  NotFoundError,
+} = require("../utils/error");
 const db = require("../db");
-const bcrypt = require("bcrypt");
+const User = require("../models/user");
 
 class UserActivityPref{
 
