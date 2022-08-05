@@ -31,6 +31,7 @@ export default function Home({ user, isFetching, posts, addPost, error }) {
            
           <div class="Landing">
             <div class="hero">
+            
             <img  class = "img"
                   src="	https://blog.bonus.ly/hubfs/group-of-employees-meditating.png"
                   width = "500"
@@ -39,8 +40,8 @@ export default function Home({ user, isFetching, posts, addPost, error }) {
                   alt="Fitness"
                 
             ></img>
-             
-              <p class="para">A Standford Study shows that a collobarative approach gives collaborators increased motivation on the task at hand so Wellness activities are best when done with others </p>
+           <p >A Standford Study shows that a collobarative approach gives collaborators increased motivation on the task at hand so Wellness activities are best when done with others </p>  
+              
               
             </div>
             <footer class = "site-footer">

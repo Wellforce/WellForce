@@ -1,14 +1,16 @@
 
 .para{
+background-color:rgb(255, 255, 255);
 max-width: 300px;
 max-height: 50px;
-left: -600px;
-top: -150px;
+left: -400px;
+top: -350px;
 }
+
 img{
-    left: -700px;
-    top: 150px;
-    border-radius: 300;
+    left: -900px;
+    top: 200px;
+    border-radius: 50%;
     }
 .Landing .hero {
     height: 500px;
@@ -18,8 +20,8 @@ img{
 }
 
 .Landing, .Landing .hero  {
-    border-radius: 50px 20px;
-    background-color:#009EDB;
+
+    background-color:#0D9DDA;
     box-shadow: 10px 10px lightskyblue;
     width: 100%;
     display: flex;
@@ -45,7 +47,7 @@ a, div, h1, h2, h3, h4, h5, h6, ol, p, span, ul {
 }
 
 .Landing .hero h1, .Landing .hero p {
-    background:#009EDB; 
+    background:#0D9DDA; 
     color: var(--pure-white);
     position: relative;
     z-index: 10;
