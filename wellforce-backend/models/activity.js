@@ -39,12 +39,27 @@ RETURNING user_id, activity_name;
 const preference = result.rows;
 
 
+
 return preference
 
 
 }
 
+static async createMatch(user_id){
+  const result1 = await db.query(`
+  SELECT user_id,COUNT(user_id) as matches  FROM 
+  (SELECT p.user_id,p.activity_name FROM 
+  (SELECT user_id,activity_name FROM preferences where user_id = $1) as userpref 
+  JOIN preferences as p on userpref.activity_name = p.activity_name where p.user_id != $1)
+   as matchedUsers GROUP BY matchedusers.user_id ORDER BY matches DESC ;
+  
+  `,[user_id])
+    const matchedUsers = result1.rows
 
+
+
+
+}
 
 
 
