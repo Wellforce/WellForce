@@ -24,3 +24,6 @@ Deployment Website: **Add Link to Deployed Project**
 ### Open-source libraries used
 
 - Add any links to open-source libraries used in your project.
+need to call api client 
+How to make it so that the user id that we log in with is the user id that gets ran in the get endpoint?
+Once we figure that out make a islogged in state variable that for every register flow the userid that is made then is ran against the query

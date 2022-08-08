@@ -17,10 +17,15 @@ import axios from "axios";
     const headers = {
       "Content-Type": "application/json",
     };
+     if (!this.token){
+      this.token = localStorage.getItem(this.tokenName)
 
+
+     }
     if (this.token) {
       headers["Authorization"] = `Bearer ${this.token}`;
     }
+    console.log("headers",headers)
     try {
       const res = await axios({ url, method, data, headers });
       return { data: res.data, error: null };
