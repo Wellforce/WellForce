@@ -29,5 +29,23 @@ router.post("/", async (req, res, next) => {
   }
 });
 
+// we want product cards to have amount of preferences user is matched with, user information such as user email first last name
+// router.get("/matches", async (req,res,next) => {
+//   try {
+    
+    
+
+
+
+//   }
+
+
+
+
+
+
+
+
+// })
 // module.exports = router;
 module.exports = router;

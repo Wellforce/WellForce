@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.use(security.extractUserFromJwt);
 app.use("/auth", authRouter);
-app.use("/preference",prefRouter)
+app.use("/preference",prefRouter);
 // app.get("/", (req, res) => {
 //   res.status(200).send({ ping: "pong" });
 // });

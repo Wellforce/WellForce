@@ -55,7 +55,7 @@ static async createMatch(user_id){
   
   `,[user_id])
     const matchedUsers = result1.rows
-
+    console.log(matchedUsers)
 
 
 
