@@ -25,7 +25,7 @@ function Copyright(props) {
     >
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        LifeTracker
+        Wellforce
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -71,7 +71,8 @@ export default function SignUp() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          {/* Regigter lock icon */}
+          <Avatar sx={{ m: 1, bgcolor: "#0d9dda" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -137,6 +138,7 @@ export default function SignUp() {
                 />
               </Grid>
               <Grid item xs={12}>
+
                 <FormControlLabel
                   control={
                     <Checkbox value="allowExtraEmails" color="primary" />
@@ -149,9 +151,9 @@ export default function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2, background: "linear-gradient(to right, #0d9dda, #09bc8a)",color:"white" }}
             >
-              Sign Up
+              Register
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>

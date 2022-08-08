@@ -14,8 +14,11 @@
 --SELECT username,activity_name from users where user
 --as u JOIN preferences as p ON u.id = p.user_id;
 
-SELECT user_id,COUNT(user_id) as matches  FROM (SELECT p.user_id,p.activity_name FROM (SELECT user_id,activity_name FROM preferences where user_id = 2) as userpref 
-JOIN preferences as p on userpref.activity_name = p.activity_name where p.user_id != 2) as matchedUsers GROUP BY matchedusers.user_id ORDER BY matches DESC ;
+SELECT user_id,COUNT(user_id) as matches  FROM 
+(SELECT p.user_id,p.activity_name FROM 
+(SELECT user_id,activity_name FROM preferences where user_id = 2) as userpref 
+JOIN preferences as p on userpref.activity_name = p.activity_name where p.user_id != 2)
+ as matchedUsers GROUP BY matchedusers.user_id ORDER BY matches DESC ;
 
 -- 
  

@@ -8,4 +8,3 @@ CREATE DATABASE wellforce;
 
 \i wellforce-schema.sql
 \i populate.sql
-

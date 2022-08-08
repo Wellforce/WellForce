@@ -1,3 +1,4 @@
+\c wellforce
 DROP TABLE IF EXISTS preferences CASCADE;
 
 CREATE TABLE preferences(

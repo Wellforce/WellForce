@@ -22,27 +22,27 @@ function App() {
   const [error, setError] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
   const [isLoggedin, setIsLoggedin] = useState(false);
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setIsFetching(true);
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     setIsFetching(true);
 
-      try {
-        const res = await axios.get("http://localhost:3001/preferences");
-        if (res?.data?.posts1) {
-          setError(null);
-          setPosts(res.data.posts1);
-        }
-      } catch (err) {
-        console.log(err);
-        const message = err?.response?.data?.error?.message;
-        setError(message ?? String(err));
-      } finally {
-        setIsFetching(false);
-      }
-    };
+  //     try {
+  //       const res = await axios.get("http://localhost:3000/preferences");
+  //       if (res?.data?.posts1) {
+  //         setError(null);
+  //         setPosts(res.data.posts1);
+  //       }
+  //     } catch (err) {
+  //       console.log(err);
+  //       const message = err?.response?.data?.error?.message;
+  //       setError(message ?? String(err));
+  //     } finally {
+  //       setIsFetching(false);
+  //     }
+  //   };
 
-    fetchPosts();
-  }, []);
+  //   fetchPosts();
+  // }, []);
 
   const addPost = (newPost) => {
     setPosts((oldPosts) => [newPost, ...oldPosts]);
