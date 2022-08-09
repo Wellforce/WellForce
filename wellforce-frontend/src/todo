@@ -26,3 +26,7 @@ make a slack automation and a email automation
 Done for backend
     Requests work for backend it will return username and stuff for frontend and frontend can grab it 
     preferences done for backend
+
+before we get into slack we should make sure our log in flow is working
+what is our log in flow you log in and it takes you straight to your matches page
+you log in and the drop in menu lets you update your preferences

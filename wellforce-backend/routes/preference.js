@@ -34,6 +34,21 @@ router.post("/", async (req, res, next) => {
     next(error);
   }
 });
+router.put("/", async (req, res, next) => {
+  try {
+    const user = res.locals.user;
+    const Preference = await UserActivityPref.createPreference(
+      req.body,
+      user.id
+    );
+
+    //  const token = extractUserFromJwt(req.header.token);
+    return res.status(200).json({ Preference });
+  } catch (error) {
+    res.status(401).send(error);
+    next(error);
+  }
+});
 
 router.get("/testing", async (req, res, next) => {
   try {
