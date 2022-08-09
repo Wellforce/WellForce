@@ -1,9 +1,12 @@
 // import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "./Preferences.css";
 import ApiClient from "../Services/apiClient";
+import { useNavigate } from 'react-router';
+import apiClient from "../Services/apiClient";
 export default function Preference() {
+  const Navigate = useNavigate()
   const [checked, setChecked] = useState([]);
   const checkList = [
     "Yoga",
@@ -13,7 +16,7 @@ export default function Preference() {
     "Dancing",
     "Strength Training",
     "Breathwork",
-    "BookClub",
+    "Bookclub",
     "Soccer",
     "Basketball",
   ];
@@ -32,7 +35,7 @@ export default function Preference() {
   // Generate string of checked items
   const checkedItems = checked.length
     ? checked.reduce((total, item) => {
-        return total + ", " + item;
+        return total + "," + item;
       })
     : "";
 
@@ -40,10 +43,19 @@ export default function Preference() {
   var isChecked = (item) =>
     checked.includes(item) ? "checked-item" : "not-checked-item";
 
-  const checkedArray = checkedItems.split(',');
+  const checkedArray = checkedItems.split(",");
 
   function handleOnSubmit() {
-    ApiClient.postPreferences(checkedArray);
+    ;
+    if (ApiClient.checkIfPrefExists()) {
+      console.log("user already has preferences preferences will be updated");
+      apiClient.UpdatePreferences(checkedArray)
+
+      Navigate("/matchGrid");
+    } else {
+      ApiClient.postPreferences(checkedArray);
+      Navigate("/matchGrid");
+    }
   }
 
   return (
