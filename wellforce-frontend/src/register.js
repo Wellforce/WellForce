@@ -14,6 +14,7 @@ import Container from "@mui/material/Container";
 import axios from "axios";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
+import apiClient from "./Services/apiClient"
 
 function Copyright(props) {
   return (
@@ -50,8 +51,11 @@ export default function SignUp() {
     };
 
     console.log(user);
+    
     const res = await axios.post("http://localhost:3001/auth/register", user);
     if (res?.data?.user){
+      apiClient.setToken(res.data.token)
+      console.log("log tokens: ", res.data)
       navigate("/preference")
     } 
     console.log({

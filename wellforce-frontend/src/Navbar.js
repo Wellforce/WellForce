@@ -206,7 +206,7 @@ export default function Navbar({ setIsLoggedin, isLoggedin }) {
             >
               {settings.map((setting) => (
                 //  <a href={`http://localhost:3001/`} target="_blank" rel="noreferrer" >
-
+                // bring back to preferences with specific users old preferences selected when they submit it is a put request instead of a post
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Link className="buttons" to={`/`}>
                     {setting}

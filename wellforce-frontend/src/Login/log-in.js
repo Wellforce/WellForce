@@ -46,9 +46,9 @@ export default function SignIn() {
       password: data.get("password"),
     };
     console.log(user);
-    const res = await axios.post("http://localhost:3000/auth/log-in", user);
+    const res = await axios.post("http://localhost:3001/auth/log-in", user);
     if (res?.data?.user) {
-      navigate("/Activity");
+      navigate("/matchGrid");
     }
     console.log({
       email: data.get("email"),
