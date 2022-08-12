@@ -60,7 +60,7 @@ import axios from "axios";
       endpoint: `preference/prefCheck`,
       method: `GET`,
     })
-
+    
   }
 
  async updatePref(){}
