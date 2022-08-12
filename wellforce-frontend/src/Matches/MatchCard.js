@@ -15,7 +15,9 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {useEffect} from 'react'
+import { useState } from 'react';
 import axios from 'axios';
+import apiClient from "../Services/apiClient"
 
 
 const ExpandMore = styled((props) => {
@@ -30,7 +32,8 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function RecipeReviewCard({matchedUser}) {
-
+  const[likes,setLikes] = useState(false);
+  
   console.log("matchedUser in card",matchedUser)
   useEffect( () =>{
     console.log("hello")
@@ -43,7 +46,16 @@ console.log("matchedUser in card",matchedUser)
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  const arr = [matchedUser.user_id]
 
+  function handleClick(){
+    setLikes(!likes)
+    console.log("boolean for likes ",likes )
+    if(likes){
+    apiClient.createLike(arr)
+    }
+  }
+  
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
@@ -76,12 +88,14 @@ console.log("matchedUser in card",matchedUser)
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="add to favorites" onClick={handleClick }>
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+        <IconButton aria-label="share" onClick={() => {
+    alert('clicked')}}>
+          <ShareIcon onClick={() => {
+    alert('clicked')}} />
+        </IconButton >
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}

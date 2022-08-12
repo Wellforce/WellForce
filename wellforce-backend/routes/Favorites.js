@@ -32,18 +32,28 @@ router.post("/", async (req, res, next) => {
 router.delete("/", async (req, res, next) => {
     try {
       const user = res.locals.user;
-      const Preference = await UserLikes.deleteLike(
-        req.body,
+      const deletedFavorite = await UserLikes.deleteLike(
         user.id
       );
   
       //  const token = extractUserFromJwt(req.header.token);
-      return res.status(200).json({ Preference });
+      return res.status(200).json({ deletedFavorite });
     } catch (error) {
       res.status(401).send(error);
       next(error);
     }
   });
-
+  router.get("/", async (req, res, next) => {
+    try {
+      const user = res.locals.user;
+      console.log("userid in favObj", user.id);
+      const favObj = await UserLikes.getUserbyLike(user.id);
+  
+      return res.status(200).json({ favObj });
+    } catch (error) {
+      res.status(401).send(error);
+      next(error);
+    }
+  });
 
 module.exports = router;

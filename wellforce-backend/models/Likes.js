@@ -5,7 +5,7 @@ const {
   } = require("../utils/error");
   const db = require("../db");
   const User = require("../models/user");
-  
+
   class UserLikes {
     static async isPrefChecked( user_id) {
     
@@ -51,6 +51,7 @@ const {
   
       return preference;
     }
+
     static async deleteLike(arr,user_id){
        
         // adds preference to database
@@ -67,6 +68,24 @@ const {
         return preference;
     
       }
+      static async getUserbyLike(user_id) {
+        const result1 = await db.query(
+            //point of query is to get user object by the liked user id
+          `
+          SELECT *
+          FROM  favorites
+          LEFT JOIN users 
+          ON favorites.liked_id = users.id where user_id = $1;    
+      `,
+          [user_id]
+        );
+        const matchedUsers = result1.rows;
+        console.log(matchedUsers);
+    
+        return matchedUsers;
+      }
+    
+
     static async updatePreference(arr,user_id){
       if (arr.length != 5) {
         throw new BadRequestError(`5 activities were not chosen`);
