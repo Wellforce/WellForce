@@ -37,13 +37,13 @@ router.post("/", async (req, res, next) => {
 router.put("/", async (req, res, next) => {
   try {
     const user = res.locals.user;
-    const Preference = await UserActivityPref.createPreference(
+    const updatePref = await UserActivityPref.updatePreference(
       req.body,
       user.id
     );
 
     //  const token = extractUserFromJwt(req.header.token);
-    return res.status(200).json({ Preference });
+    return res.status(200).json({ updatePref });
   } catch (error) {
     res.status(401).send(error);
     next(error);
@@ -52,10 +52,10 @@ router.put("/", async (req, res, next) => {
 
 router.get("/testing", async (req, res, next) => {
   try {
-    const user = res.locals.user
-    console.log("user object", user)
+    const user = res.locals.user;
+    console.log("user object", user);
     const Preference = await UserActivityPref.createMatch(user.id);
-   
+
     //  const token = extractUserFromJwt(req.header.token);
     return res.status(200).json({ Preference });
   } catch (error) {
@@ -64,14 +64,17 @@ router.get("/testing", async (req, res, next) => {
   }
 });
 
+router.get("/prefCheck", async (req, res, next) => {
+  try {
+    const user = res.locals.user;
+    console.log("userid in prefCheck", user.id);
+    const isPrefChecked = await UserActivityPref.isPrefChecked(user.id);
 
+    return res.status(200).json({ isPrefChecked });
+  } catch (error) {
+    res.status(401).send(error);
+    next(error);
+  }
+});
 
-
-
-
-
-
-
-// })
-// module.exports = router;
 module.exports = router;

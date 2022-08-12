@@ -5,6 +5,7 @@ const cors = require("cors");
 const security = require("./middleware/security");
 const authRouter = require("./routes/auth");
 const prefRouter = require("./routes/preference")
+const likeRouter= require("./routes/Favorites")
 const { PORT } = require("./config");
 
 app.use(cors());
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(security.extractUserFromJwt);
 app.use("/auth", authRouter);
 app.use("/preference",prefRouter);
+app.use("/likes",likeRouter);
 // app.get("/", (req, res) => {
 //   res.status(200).send({ ping: "pong" });
 // });

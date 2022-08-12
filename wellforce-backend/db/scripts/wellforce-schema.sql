@@ -19,3 +19,8 @@ CREATE TABLE preferences(
     user_id INTEGER REFERENCES users(id),
     activity_name TEXT REFERENCES activities(name)
 );
+CREATE TABLE favorites(
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    liked_id INTEGER REFERENCES users(id)
+);

@@ -39,11 +39,30 @@ import axios from "axios";
     return await this.request({ endpoint: `auth/me`, method: `GET` });
   }
   async postPreferences(checkedArray) {
+    console.log("checked array in apiclient", checkedArray)
     return await this.request({
       endpoint: `preference`,
       method: `POST`,
       data: checkedArray,
     });
   }
+  async UpdatePreferences(checkedArray) {
+    console.log("checked array in update apiclient", checkedArray)
+    return await this.request({
+      endpoint: `preference`,
+      method: `PUT`,
+      data: checkedArray,
+    });
+  }
+
+  async checkIfPrefExists(){
+    return await this.request({
+      endpoint: `preference/prefCheck`,
+      method: `GET`,
+    })
+    
+  }
+
+ async updatePref(){}
 }
 export default new ApiClient( "http://localhost:3001"); 
