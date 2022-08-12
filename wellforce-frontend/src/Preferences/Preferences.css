@@ -21,7 +21,7 @@
     margin-left: 10px;
   }
   .checked-item {
-    text-decoration: line-through;
+    
     border: 2px solid black;
     background-color: #0D9DDA;
     color: black;

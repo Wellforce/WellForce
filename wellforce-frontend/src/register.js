@@ -15,6 +15,8 @@ import axios from "axios";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import apiClient from "./Services/apiClient"
+import nature from "./nature.png";
+
 
 function Copyright(props) {
   return (
@@ -26,7 +28,7 @@ function Copyright(props) {
     >
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        Wellforce
+        WellForce
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -34,7 +36,21 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
+const theme = createTheme({
+  status: {
+    danger: '#e53e3e',
+  },
+  palette: {
+    primary: {
+      main: '#1798c1',
+      darker: '#053e85',
+    },
+    neutral: {
+      main: '#red',
+      contrastText: '',
+    },
+  },
+});
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -170,6 +186,13 @@ export default function SignUp() {
         </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>
+      <div>
+        <img
+            style= {{"max-width":"100%","border-radius":"0px"}}
+            alt="grass"
+            src=	{nature}
+          ></img>
+        </div>
     </ThemeProvider>
   );
 }

@@ -34,7 +34,7 @@ const theme = createTheme({
       darker: '#053e85',
     },
     neutral: {
-      main: '#152635',
+      main: '#white',
       contrastText: '',
     },
   },
@@ -75,7 +75,7 @@ export default function Navbar({ setIsLoggedin, isLoggedin }) {
 
   return (
     <ThemeProvider theme={theme}> 
-    <AppBar position="static" color="neutral">
+    <AppBar position="static" color="neutral" sx={{backgroundColor:"#DEF1FF", boxShadow: 0}}>
    
       <Container 
       // margin control for Wellforce logo
@@ -88,7 +88,7 @@ export default function Navbar({ setIsLoggedin, isLoggedin }) {
             component="a"
             href="/"
             sx={{
-              mr: 2,
+              mr: 2, 
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
@@ -118,6 +118,7 @@ export default function Navbar({ setIsLoggedin, isLoggedin }) {
               anchorOrigin={{
                 vertical: "bottom",
                 horizontal: "left",
+                textDecoration: "none",
               }}
               keepMounted
               transformOrigin={{
@@ -166,7 +167,7 @@ export default function Navbar({ setIsLoggedin, isLoggedin }) {
                 
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, background: "#FFFFFF " , backgroundColor: "#0d9dda", color: "blue"}}
+                sx={{ my: 2, background: " " , backgroundColor: "#DEF1FF",color:"#0d9dda", textDecoration: "none", "&:hover":{backgroundColor:"lightgrey"}}}
               >
                   
 
@@ -206,7 +207,7 @@ export default function Navbar({ setIsLoggedin, isLoggedin }) {
             >
               {settings.map((setting) => (
                 //  <a href={`http://localhost:3001/`} target="_blank" rel="noreferrer" >
-                // bring back to preferences with specific users old preferences selected when they submit it is a put request instead of a post
+
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Link className="buttons" to={`/`}>
                     {setting}

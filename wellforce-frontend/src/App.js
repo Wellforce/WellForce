@@ -64,7 +64,7 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <main>
+        <main style={{backgroundColor:"#DEF1FF"}}>
           <Navbar
             setIsLoggedin={setIsLoggedin}
             isLoggedin={isLoggedin}
