@@ -51,10 +51,10 @@ export default function Preference() {
       console.log("user already has preferences preferences will be updated");
       apiClient.UpdatePreferences(checkedArray)
 
-      Navigate("/matchGrid");
+      Navigate("/Dashboard");
     } else {
       ApiClient.postPreferences(checkedArray);
-      Navigate("/matchGrid");
+      Navigate("/Dashboard");
     }
   }
 

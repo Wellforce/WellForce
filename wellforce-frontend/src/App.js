@@ -16,6 +16,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Preference from "./Preferences/Preferences";
 import MatchGrid from "./Matches/MatchGrid"
+import Dashboard from "./Dashboard/Dashboard";
 function App() {
   const [count, setCount] = useState(0);
   const [user, setUser] = useState({});
@@ -96,6 +97,7 @@ function App() {
             {/* <Route path="/log-in" element={<S />} /> */}
             <Route path="/preference" element={<Preference />} />
             <Route path="/matchGrid" element={<MatchGrid />} />
+            <Route path="/Dashboard" element={<Dashboard />} />
             {/* <Route path="/activity" element={<Activity setIsLoggedin = {setIsLoggedin} isLoggedin = {isLoggedin} />} /> */}
           </Routes>
         </main>
