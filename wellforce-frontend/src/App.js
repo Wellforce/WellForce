@@ -64,7 +64,7 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <main>
+        <main style={{backgroundColor:"#DEF1FF"}}>
           <Navbar
             setIsLoggedin={setIsLoggedin}
             isLoggedin={isLoggedin}
@@ -93,6 +93,7 @@ function App() {
               }
             />
             <Route path="/log-in" element={<SignIn />} />
+            {/* <Route path="/log-in" element={<S />} /> */}
             <Route path="/preference" element={<Preference />} />
             <Route path="/matchGrid" element={<MatchGrid />} />
             {/* <Route path="/activity" element={<Activity setIsLoggedin = {setIsLoggedin} isLoggedin = {isLoggedin} />} /> */}

@@ -14,6 +14,8 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import nature from "../nature.png";
+
 
 function Copyright(props) {
   return (
@@ -129,6 +131,13 @@ export default function SignIn() {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
+      <div>
+        <img
+            style= {{"max-width":"100%","border-radius":"0%"}}
+            alt="grass"
+            src=	{nature}
+          ></img>
+        </div>
     </ThemeProvider>
   );
 }
