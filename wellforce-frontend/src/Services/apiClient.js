@@ -54,13 +54,29 @@ import axios from "axios";
       data: checkedArray,
     });
   }
+  async deleteLike(){
+    console.log("Deleted like ")
+    return await this.request({
+      endpoint: `likes`,
+      method: `DELETE`,
+    });
+
+  }
+  async createLike(likedArray){
+    console.log("created new like: ", likedArray)
+    return await this.request({
+      endpoint: `likes`,
+      method: `POST`,
+      data: likedArray,
+    });
+  }
 
   async checkIfPrefExists(){
     return await this.request({
       endpoint: `preference/prefCheck`,
       method: `GET`,
     })
-    
+
   }
 
  async updatePref(){}

@@ -7,7 +7,7 @@
     top: 0;
     padding-top: 40px;
     background-color: rgb(235, 240, 241);
-    background-color: #b1deeb
+    background-color: #DEF1FF
 
     }
     
@@ -41,17 +41,17 @@
         right: 300;
         top: 0;
         padding-top: 40px;
-        background-color: rgb(235, 240, 241);
-        background-color: #b1deeb
+        background-color: #DEF1FF;
+        background-color: #DEF1FF
     }
     .See{
         height: 30px;
-        
-        width: 70px;
+        background-color: #DEF1FF;
+        width: 130px;
     }
     .See  {
         border-radius:50px;
-        border-color: #04AA6D;
+        border-color:  #DEF1FF;
         color: green;
       }
       
