@@ -6,7 +6,7 @@ const SECRET_KEY = process.env.SECRET_KEY || "secret_dev";
 const IS_TESTING = process.env.NODE_ENV === "test";
 
 function getDatabaseUri() {
-  const dbUser = process.env.DATABASE_USER || "postgres";
+  const dbUser = process.env.DATABASE_USER || "abdirahman.ali";
   const dbPass = process.env.DATABASE_PASS
     ? encodeURI(process.env.DATABASE_PASS)
     : "postgres";
