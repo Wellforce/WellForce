@@ -14,6 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import Preference from "../Preferences/Preferences";
 import SignIn from "../Login/log-in";
+import FavMatches from "../Matches/FavMatches";
 
 import "../Dashboard/Dashboard.css";
 
@@ -59,7 +60,7 @@ const settings = ["Edit Preferences", "Logout"];
 export default function Dashboard({ setIsLoggedin, isLoggedin }) {
   const [match, setMatch] = React.useState(false);
   const [pref, setPref] = React.useState(false);
-  
+  const[fav,setFav] = React.useState(false);
 
   function handleClick() {
     if(match){
@@ -68,10 +69,16 @@ export default function Dashboard({ setIsLoggedin, isLoggedin }) {
     else{
         setMatch(true)
     }
-    console.log("on click ",match)
+    console.log("on click match ",match)
   }
   function handleClick1() {
-    
+    if(fav){
+        setFav(false)
+        }
+        else{
+            setFav(true)
+        }
+        console.log("on click favorite ",fav)
 }
 
 
@@ -80,7 +87,7 @@ export default function Dashboard({ setIsLoggedin, isLoggedin }) {
 
 
 <div class="sidebar">
-<div>Menu Item 1
+<div>
 <button class="See" onClick= {handleClick}>
 Matches
 </button >
@@ -89,15 +96,15 @@ Matches
 
 </div>
 
-<div>Menu Item 2
+<div>
 <button class="Edit" onClick= {handleClick1}>
-Preference
-</button >
+Liked
+</button > 
 
 
 
 </div>
-<div>Menu Item 3
+<div>
 
 
 
@@ -106,9 +113,10 @@ Preference
 
 
 <div class= "rendered">
-    {match? <MatchGrid></MatchGrid> :< Preference></Preference>}
+     {match? <MatchGrid></MatchGrid> :< Preference></Preference>} 
     {/*   */}
-   
+    {fav?<FavMatches></FavMatches>:<MatchGrid></MatchGrid>}
+    {/* <FavMatches></FavMatches>  */}
 </div>
 </div>
 

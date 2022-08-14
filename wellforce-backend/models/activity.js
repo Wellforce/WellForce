@@ -86,7 +86,7 @@ RETURNING user_id, activity_name;
   static async createMatch(user_id) {
     const result1 = await db.query(
       `
-  SELECT username,first_name,last_name,email, matches from (SELECT user_id,COUNT(user_id) as matches  FROM 
+  SELECT user_id,username,first_name,last_name,email, matches from (SELECT user_id,COUNT(user_id) as matches  FROM 
   (SELECT p.user_id,p.activity_name FROM 
   (SELECT user_id,activity_name FROM preferences where user_id = $1) as userpref 
   JOIN preferences as p on userpref.activity_name = p.activity_name where p.user_id != $1)
