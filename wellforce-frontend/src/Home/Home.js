@@ -27,6 +27,7 @@ import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import { AppBar } from "@mui/material";
+import { maxWidth, width } from "@mui/system";
 
 function Copyright() {
   return (
@@ -41,8 +42,8 @@ function Copyright() {
   );
 }
 
-const cards = [1, 2, 3, ];
-
+const cards = ["https://it.smartsheet.com/sites/default/files/icons-honest-blue_projects.png", "https://cdn-icons-png.flaticon.com/512/1472/1472918.png", "https://old.caremate.ee/static/assets/add-user.svg"];
+const text = ["SignUp","Choose Your Activities","Pick Your Partner"]
 const theme = createTheme();
 
 export default function Album() {
@@ -62,12 +63,24 @@ export default function Album() {
           }}
         >
           <Container maxWidth="sm">
+          <div>
+            <img
+                class="img"
+                src="	https://puml.io/wp-content/uploads/2021/01/PUML-Corporate-Wellness-1.png"
+                width="500"
+                height="500"
+                left="0"
+                marginTop={"80%"}
+                alt="Fitness"
+              ></img>
+            </div>
             <Typography
               component="h1"
               variant="h2"
               align="center"
               color="text.primary"
               gutterBottom
+              //marginTop={"80%"}
             >
               Why Sign Up To Find A Wellness Partner?
             </Typography>
@@ -77,17 +90,7 @@ export default function Album() {
             
             </Typography>
             <Container component="main" maxWidth="xs">
-            <div>
-            <img
-                class="img"
-                src="	https://puml.io/wp-content/uploads/2021/01/PUML-Corporate-Wellness-1.png"
-                width="500"
-                height="500"
-                left="0"
-                marginLeft="2vh"
-                alt="Fitness"
-              ></img>
-            </div>
+            
             </Container>
             
             <Stack
@@ -100,31 +103,38 @@ export default function Album() {
             </Stack>
           </Container>
         </Box>
+        <div
+          style= {{width : "100%", backgroundColor:"#DEF1FF"}}
+          >
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+            {cards.map((card,idx) => (
+              <Grid item key={card} xs={12} sm={6} md={4} >
                 <Card
-                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                  sx={{ height: '100%', width:'100%', display: 'flex', flexDirection: 'column' }}
                 >
                   <CardMedia
                     component="img"
                     sx={{
                       // 16:9
                       pt: '10%',
+                      height:"80%",
+                      width:"80%",
+                      display:"flex",
+                      alignSelf:"center",
                     }}
-                    image="https://source.unsplash.com/random"
+                    image= {card}
                     alt="random"
+                    
                   />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      SignUp
+                  <CardContent sx={{ flexGrow: 1, display:"flex", justifyContent:"center", alignItems:"center" }}
+                    
+                  >
+                    <Typography gutterBottom variant="h5" component="h2" text={text[idx]}>
+                      {text[idx]}
                     </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the
-                      content.
-                    </Typography>
+                    
                   </CardContent>
                   
                 </Card>
@@ -132,6 +142,7 @@ export default function Album() {
             ))}
           </Grid>
         </Container>
+        </div>
       </main>
       {/* Footer */}
       

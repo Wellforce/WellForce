@@ -59,7 +59,7 @@ export default function Preference() {
   }
 
   return (
-    <div className="app">
+    <div className="app1">
       <div className="checkList">
         <div className="title">Select your Wellness Activities:</div>
         <div className="list-container">

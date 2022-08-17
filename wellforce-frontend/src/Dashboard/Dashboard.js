@@ -15,6 +15,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import Preference from "../Preferences/Preferences";
 import SignIn from "../Login/log-in";
 import FavMatches from "../Matches/FavMatches";
+import nature from  "../nature.png"
 
 import "../Dashboard/Dashboard.css";
 
@@ -109,6 +110,7 @@ Liked
 
 
 </div>
+
 </div>
 
 
@@ -118,7 +120,15 @@ Liked
     {fav?<FavMatches></FavMatches>:<MatchGrid></MatchGrid>}
     {/* <FavMatches></FavMatches>  */}
 </div>
+<div>
+        <img
+            style= {{"max-width":"100%","border-radius":"0px", "marginTop":"55%"}}
+            alt="grass"
+            src=	{nature}
+          ></img>
+        </div>
 </div>
+
 
 )
 }

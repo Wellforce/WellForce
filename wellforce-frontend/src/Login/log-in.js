@@ -37,7 +37,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignIn() {
+export default function SignIn(props) {
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -50,6 +50,8 @@ export default function SignIn() {
     console.log(user);
     const res = await axios.post("http://localhost:3001/auth/log-in", user);
     if (res?.data?.user) {
+      const init =  res.data.user.username.slice(0,1)
+      props.setInitial(init)
       navigate("/matchGrid");
     }
     console.log({

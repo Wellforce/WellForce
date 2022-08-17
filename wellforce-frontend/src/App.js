@@ -24,6 +24,7 @@ function App() {
   const [error, setError] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
   const [isLoggedin, setIsLoggedin] = useState(false);
+  const[initial,setInitial] = useState(null);
   // useEffect(() => {
   //   const fetchPosts = async () => {
   //     setIsFetching(true);
@@ -61,7 +62,7 @@ function App() {
       });
     });
   };
-
+console.log("initial", initial)
   return (
     <div className="app">
       <BrowserRouter>
@@ -79,6 +80,9 @@ function App() {
             setError={setError}
             isFetching={isFetching}
             setIsFetching={setIsFetching}
+            initial={initial}
+            setInitial={setInitial}
+
           ></Navbar>
           <Routes>
             <Route path="/" setUser={setUser} user={user} element={<Home />} />
@@ -90,10 +94,13 @@ function App() {
                   user={user}
                   setIsLoggedin={setIsLoggedin}
                   isLoggedin={isLoggedin}
+                  initial={initial}
+                  setInitial={setInitial}
                 />
               }
             />
-            <Route path="/log-in" element={<SignIn />} />
+            <Route path="/log-in" element={<SignIn initial={initial}
+                  setInitial={setInitial}/>} />
             {/* <Route path="/log-in" element={<S />} /> */}
             <Route path="/preference" element={<Preference />} />
             <Route path="/matchGrid" element={<MatchGrid />} />

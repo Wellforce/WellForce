@@ -52,7 +52,7 @@ const theme = createTheme({
   },
 });
 
-export default function SignUp() {
+export default function SignUp(props) {
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -72,7 +72,12 @@ export default function SignUp() {
     if (res?.data?.user){
       apiClient.setToken(res.data.token)
       console.log("log tokens: ", res.data)
+      //console.log(res.data.user.userName)
+      
+      const init =  res.data.user.userName.slice(0,1)
+      props.setInitial(init)
       navigate("/preference")
+
     } 
     console.log({
       email: data.get("email"),
@@ -80,8 +85,9 @@ export default function SignUp() {
     });
   };
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+    
+    <ThemeProvider theme={theme} >
+       <Container component="main" maxWidth="xs" >
         <CssBaseline />
         <Box
           sx={{
