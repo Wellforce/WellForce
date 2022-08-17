@@ -22,9 +22,17 @@ CREATE TABLE preferences(
     user_id INTEGER REFERENCES users(id),
     activity_name TEXT REFERENCES activities(name)
 );
+DROP TABLE IF EXISTS favorites CASCADE;
+
+CREATE TABLE favorites(
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    liked_id INTEGER REFERENCES users(id)
+);
 
 
 
 \COPY users(username, password, first_name, last_name, email) FROM '../starter_data/users.csv' DELIMITER ',' CSV HEADER;
 \COPY activities(name) FROM '../starter_data/activities.csv' DELIMITER ',' CSV HEADER;
 \COPY preferences(user_id, activity_name) FROM '../starter_data/prefs.csv' DELIMITER ',' CSV HEADER;
+\COPY favorites(user_id, liked_id) FROM '../starter_data/superMatch.csv' DELIMITER ',' CSV HEADER;

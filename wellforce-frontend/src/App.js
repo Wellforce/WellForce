@@ -95,9 +95,12 @@ function App() {
             />
             <Route path="/log-in" element={<SignIn />} />
             {/* <Route path="/log-in" element={<S />} /> */}
-            <Route path="/preference" element={<Preference />} />
-            <Route path="/matchGrid" element={<MatchGrid />} />
-            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/preference" element={<Preference setIsLoggedin={setIsLoggedin}
+            isLoggedin={isLoggedin} />} />
+            <Route path="/matchGrid" element={<MatchGrid setIsLoggedin={setIsLoggedin}
+            isLoggedin={isLoggedin} />} />
+            <Route path="/Dashboard" element={<Dashboard setIsLoggedin={setIsLoggedin}
+            isLoggedin={isLoggedin} />} />
             {/* <Route path="/activity" element={<Activity setIsLoggedin = {setIsLoggedin} isLoggedin = {isLoggedin} />} /> */}
           </Routes>
         </main>

@@ -10,8 +10,13 @@ import axios from "axios";
     this.token = token;
     localStorage.setItem(this.tokenName, token);
   }
-
+  removeToken() {
+    console.log("in apiclient remove token")
+    localStorage.removeItem(this.tokenName);
+  }
+  
  async request({ endpoint, method = `GET`, data = {} }) {
+  console.log("data in apiclient", data)
     const url = `${this.remoteHostUrl}/${endpoint}`;
 
     const headers = {
@@ -54,21 +59,34 @@ import axios from "axios";
       data: checkedArray,
     });
   }
-  async deleteLike(){
-    console.log("Deleted like ")
+  async deleteLike(likedObj){
+    console.log("Deleted like ",likedObj)
     return await this.request({
       endpoint: `likes`,
       method: `DELETE`,
-    });
-
+      data:likedObj,
+    },  console.log("delete like"));
   }
-  async createLike(likedArray){
-    console.log("created new like: ", likedArray)
+  async updateLike(newStatus,liked_id){
+    if(newStatus){
+      const  {data,error  } = this.createLike({"liked_id":liked_id})
+      
+      return data?true:false
+    }
+    else{
+      const  {data,error  } =   this.deleteLike({"liked_id":liked_id})
+    
+      return data?true:false
+    }
+   
+  }
+  async createLike(likedObj){
+    console.log("created new like: ",likedObj)
     return await this.request({
       endpoint: `likes`,
       method: `POST`,
-      data: likedArray,
-    });
+      data: likedObj,
+    },console.log("create like") );
   }
 
   async checkIfPrefExists(){
@@ -78,7 +96,25 @@ import axios from "axios";
     })
 
   }
+  async checkIfLikeExists(liked_id){
+    console.log("liked id in check:",liked_id)
 
- async updatePref(){}
+    return await this.request({
+      endpoint: `likes/checkLiked/${liked_id}`,
+      method: `GET`,
+      
+  },console.log("in api client check if like exist"))
+  }
+  
+  async superMatch(liked_id){
+    console.log("liked id in check:",liked_id)
+
+    return await this.request({
+      endpoint: `likes/super/${liked_id}`,
+      method: `GET`,
+      
+  },console.log("in api client check if superlike exist"))
+  }
+
 }
 export default new ApiClient( "http://localhost:3001"); 

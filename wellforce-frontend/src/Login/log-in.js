@@ -15,7 +15,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import nature from "../nature.png";
-
+import apiClient from "../Services/apiClient";
 
 function Copyright(props) {
   return (
@@ -50,7 +50,8 @@ export default function SignIn() {
     console.log(user);
     const res = await axios.post("http://localhost:3001/auth/log-in", user);
     if (res?.data?.user) {
-      navigate("/matchGrid");
+      apiClient.setToken(res.data.token)
+      navigate("/preference");
     }
     console.log({
       email: data.get("email"),

@@ -4,6 +4,7 @@ const router = express.Router();
 const User  = require("../models/user");
 const { createUserJwt } = require("../utils/token");
 const { requireAuthenticatedUser } = require("../middleware/security");
+const { token } = require("morgan");
 
 router.use((req, res, next) => {
   console.log("Time: ", Date.now());
@@ -17,7 +18,9 @@ router.get("/", (req, res) => {
 router.post("/log-in", async (req, res, next) => {
   try {
     const user = await User.login(req.body);
-    const token = createUserJwt(user);
+    const token= createUserJwt(user);
+    console.log("user in log-in:",user)
+    console.log("token in log-in:",token)
     return res.status(200).json({ user, token });
   } catch (error) {
     res.status(401).send(error);
@@ -27,7 +30,9 @@ router.post("/log-in", async (req, res, next) => {
 
 router.post("/register", async (req, res, next) => {
   try {
+    
     const user = await User.register(req.body);
+    console.log('user in backend',user)
     const token = createUserJwt(user);
     return res.status(201).json({ user, token });
   } catch (error) {
