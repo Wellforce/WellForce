@@ -3,10 +3,10 @@ import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import "./Preferences.css";
 import ApiClient from "../Services/apiClient";
-import { useNavigate } from 'react-router';
+import { useNavigate } from "react-router";
 import apiClient from "../Services/apiClient";
 export default function Preference() {
-  const Navigate = useNavigate()
+  const Navigate = useNavigate();
   const [checked, setChecked] = useState([]);
   const checkList = [
     "Yoga",
@@ -46,10 +46,11 @@ export default function Preference() {
   const checkedArray = checkedItems.split(",");
 
   function handleOnSubmit() {
-    ;
-    if (ApiClient.checkIfPrefExists()) {
+    if (checkedItems.split(",").length != 5) {
+      window.alert("Please click on 5 items");
+    } else if (ApiClient.checkIfPrefExists()) {
       console.log("user already has preferences preferences will be updated");
-      apiClient.UpdatePreferences(checkedArray)
+      apiClient.UpdatePreferences(checkedArray);
 
       Navigate("/Dashboard");
     } else {
@@ -58,6 +59,7 @@ export default function Preference() {
     }
   }
 
+  console.log(checkedItems, checkedItems.split(",").length);
   return (
     <div className="app">
       <div className="checkList">
@@ -74,7 +76,10 @@ export default function Preference() {
 
       <div className="display-checked">{`Activities checked are: ${checkedItems}`}</div>
       <div className="preference-button">
-        <button className="btn preference" onClick={handleOnSubmit}>
+        <button
+          className="btn preference"
+          onClick={handleOnSubmit}
+        >
           Submit
         </button>
       </div>
