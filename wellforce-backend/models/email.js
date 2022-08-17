@@ -20,9 +20,16 @@ class SendEmails {
       const msg = {
         to: "abdirahman.2017792@gmail.com", // Change to your recipient
         from: "abdirahman.2017792@gmail.com", // Change to your verified sender
-        subject: "Super liked Users",
-        text: "and easy to do anywhere, even with Node.js",
-        html: `<strong>${matchedUsers}</strong>`,
+        subject: "Liked Users and Super Liked Users",
+
+        html: `<html>
+        <body>
+            <p> Hello! </p>
+            <p> This is the users that you have liked and also the users that have liked you.
+            They are: ${matchedUsers}.
+            </p>
+            </body>
+        </html>`,
       };
       sgMail
         .send(msg)
