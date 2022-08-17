@@ -20,10 +20,11 @@ import "./Navbar.css";
 import { useTheme } from '@mui/material/styles';
 
 // import AppRouter from './AppRouter';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { pink } from "@mui/material/colors";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import apiClient from "./Services/apiClient";
+import { useNavigate } from "react-router-dom";
 const theme = createTheme({
   status: {
     danger: '#e53e3e',
@@ -52,9 +53,10 @@ console.log("in register");
 // }, [user, navigate])
 
 const pages = ["register", "log-in","Matches"];
-const settings = ["Edit Preferences", "Logout"];
+const settings = ["Logout"];
 
-export default function Navbar({ setIsLoggedin, isLoggedin, initial }) {
+export default function Navbar({ setIsLoggedin, isLoggedin }) {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -63,6 +65,13 @@ export default function Navbar({ setIsLoggedin, isLoggedin, initial }) {
   };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
+  };
+  
+  const HandleOnClick = () => {
+    
+    apiClient.removeToken()
+    navigate("/")
+   
   };
 
   const handleCloseNavMenu = () => {
@@ -112,6 +121,7 @@ export default function Navbar({ setIsLoggedin, isLoggedin, initial }) {
             >
               <MenuIcon />
             </IconButton>
+            
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -209,9 +219,11 @@ export default function Navbar({ setIsLoggedin, isLoggedin, initial }) {
                 //  <a href={`http://localhost:3001/`} target="_blank" rel="noreferrer" >
 
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Link className="buttons" to={`/`}>
+                  {/* <Link className="buttons" to={`/`}>
                     {setting}
-                  </Link>
+                    
+                  </Link> */}
+                 <button onClick= {HandleOnClick}  > logout</button>
                   {/* <Typography textAlign="center">{setting}</Typography> */}
                 </MenuItem>
                 // </a>

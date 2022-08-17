@@ -1,12 +1,12 @@
 // import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
 import "./Preferences.css";
 import ApiClient from "../Services/apiClient";
-import { useNavigate } from 'react-router';
+import { useNavigate } from "react-router";
 import apiClient from "../Services/apiClient";
 export default function Preference() {
-  const Navigate = useNavigate()
+  const Navigate = useNavigate();
   const [checked, setChecked] = useState([]);
   const checkList = [
     "Yoga",
@@ -20,7 +20,7 @@ export default function Preference() {
     "Soccer",
     "Basketball",
   ];
-
+const [prefExist, setPrefExist] = useState(false);
   // Add/Remove checked item from list
   const handleCheck = (event) => {
     var updatedList = [...checked];
@@ -44,17 +44,40 @@ export default function Preference() {
     checked.includes(item) ? "checked-item" : "not-checked-item";
 
   const checkedArray = checkedItems.split(",");
+  useEffect(() => {
+    const getPrefStatus = async () => {const res = await ApiClient.checkIfPrefExists() 
+    setPrefExist(res.data)
+    console.log("pref Exist res;",res.data)
+    }
+    getPrefStatus()
+    
+    
+  }, []);
+  if (prefExist.isPrefChecked) {
 
+    console.log(
+      "user already has preferences, you will be redirected to dashboard"
+    );
+    //in component dashboard preferences always redirects to 
+      if(window.location.pathname === "/Dashboard"){
+
+      }
+      else{
+     Navigate("/Dashboard");
+      }
+  }
+  console.log("pref Exist;",prefExist.isPrefChecked)
   function handleOnSubmit() {
-    ;
-    if (ApiClient.checkIfPrefExists()) {
+    if (prefExist.isPrefChecked) {
+      console.log("does pref exist work in handleOnSubmit",prefExist)
       console.log("user already has preferences preferences will be updated");
-      apiClient.UpdatePreferences(checkedArray)
-
-      Navigate("/Dashboard");
+      apiClient.UpdatePreferences(checkedArray);
+      if(window.location.pathname == "/")
+    
+      Navigate("/preference");
     } else {
       ApiClient.postPreferences(checkedArray);
-      Navigate("/Dashboard");
+      Navigate("/MatchGrid");
     }
   }
 

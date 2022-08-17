@@ -4,6 +4,7 @@ import axios from 'axios'
 import {useEffect} from 'react'
 import RecipeReviewCard from './MatchCard';
 import apiClient from '../Services/apiClient';
+import "./Matches.css"
 export default function MatchGrid(props){
   const[matchedUsers,setMatchedUsers] = React.useState([])
   useEffect( () =>{
@@ -19,13 +20,22 @@ export default function MatchGrid(props){
     console.log("matchedUsers in matchGrid",matchedUsers)
 
   },[matchedUsers]); 
+  
+  //make it so that you can't like something multiple times if you like then thats it
+  // in matchGrid we can make it so that 
   return(
+
              <div className="product-grid">
-                <div className="product-grid-wrapper">
-                    {matchedUsers.map((element, index) => (
+              
+              <div className="content">
+                  
+                  <div className="grid">
+                    {matchedUsers && matchedUsers.map((element, index) => (
+                      <div className="card">
                         < RecipeReviewCard matchedUser={matchedUsers[index]}  />
-                      
+                      </div>
                     ))}
+                    </div>
                 </div>
             </div>
   )

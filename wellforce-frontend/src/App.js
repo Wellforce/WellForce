@@ -102,9 +102,12 @@ console.log("initial", initial)
             <Route path="/log-in" element={<SignIn initial={initial}
                   setInitial={setInitial}/>} />
             {/* <Route path="/log-in" element={<S />} /> */}
-            <Route path="/preference" element={<Preference />} />
-            <Route path="/matchGrid" element={<MatchGrid />} />
-            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/preference" element={<Preference setIsLoggedin={setIsLoggedin}
+            isLoggedin={isLoggedin} />} />
+            <Route path="/matchGrid" element={<MatchGrid setIsLoggedin={setIsLoggedin}
+            isLoggedin={isLoggedin} />} />
+            <Route path="/Dashboard" element={<Dashboard setIsLoggedin={setIsLoggedin}
+            isLoggedin={isLoggedin} />} />
             {/* <Route path="/activity" element={<Activity setIsLoggedin = {setIsLoggedin} isLoggedin = {isLoggedin} />} /> */}
           </Routes>
         </main>

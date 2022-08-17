@@ -4,6 +4,7 @@ const { SECRET_KEY } = require("../config");
 const generateToken = (data) =>
   jwt.sign(data, SECRET_KEY, { expiresIn: "24h" });
 
+
 const createUserJwt = (user) => {
   const payload = {
     email: user.email,

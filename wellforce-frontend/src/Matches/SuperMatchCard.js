@@ -29,28 +29,8 @@ const ExpandMore = styled((props) => {
     duration: theme.transitions.duration.shortest,
   }),
 }));
-// import * as React from 'react';
-// import { Box, ThemeProvider, createTheme } from '@mui/system';
 
-// const theme = createTheme({
-//   palette: {
-//     background: {
-//       paper: '#fff',
-//     },
-//     text: {
-//       primary: '#173A5E',
-//       secondary: '#46505A',
-//     },
-//     action: {
-//       active: '#001E3C',
-//     },
-//     success: {
-//       dark: '#009688',
-//     },
-//   },
-// });
-
-export default function RecipeReviewCard({ matchedUser }) {
+export default function RecipeReviewCard3({ matchedUser }) {
   // -1 disabled 0 if false 1 is true
   const [like, setLike] = useState(false);
 
@@ -124,14 +104,18 @@ export default function RecipeReviewCard({ matchedUser }) {
           disabled = {like <0}
           style={{
             backgroundColor: like ? "salmon" : "",
-            color: like ?"#032E61"  : "",
+            color: like ?"lightblue"  : "",
           }}
         >
           <FavoriteIcon />
         </IconButton>
-      
+        <IconButton
+          aria-label="share"
+          onClick={() => {
+            alert("clicked");
+          }}
+        ></IconButton>
       </CardActions>
     </Card>
   );
 }
-
