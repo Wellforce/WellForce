@@ -225,7 +225,14 @@ export default function Navbar({ setIsLoggedin, isLoggedin }) {
                     {setting}
                     
                   </Link> */}
-                 <button onClick= {HandleOnClick}  > logout</button>
+                 
+                 <Button  
+           
+                onClick={HandleOnClick}
+                sx={{ my: 2, background: " " , backgroundColor: "#DEF1FF",color:"#0d9dda", textDecoration: "none", "&:hover":{backgroundColor:"lightgrey"}}}
+              >                 
+               Logout
+              </Button>
                   {/* <Typography textAlign="center">{setting}</Typography> */}
                 </MenuItem>
                 // </a>

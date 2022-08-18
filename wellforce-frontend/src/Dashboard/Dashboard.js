@@ -18,8 +18,9 @@ import SignIn from "../Login/log-in";
 import FavMatches from "../Matches/FavMatches";
 import FavMatches2 from "../Matches/SuperMatchGrid";
 import "../Dashboard/Dashboard.css";
-
-import { useTheme } from "@mui/material/styles";
+import apiClient from "../Services/apiClient";
+import { useTheme} from "@mui/material/styles";
+import { useEffect } from "react";
 import MatchGrid from "../Matches/MatchGrid";
 
 // import AppRouter from './AppRouter';
@@ -58,7 +59,23 @@ console.log("in register");
 const pages = ["register", "log-in", "Matches"];
 const settings = ["Edit Preferences", "Logout"];
 
-export default function Dashboard({ setIsLoggedin, isLoggedin }) {
+export default function Dashboard({ setIsLoggedin, isLoggedin, user }) {
+  const [matchedUsers, setMatchedUsers] = React.useState([]);
+  const [filteredUsers,setFilteredUsers] = React.useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      
+      const result = await apiClient.request({ endpoint: `likes` });
+      
+      setMatchedUsers(result?.data?.favObj);
+      console.log("in dashboard", result?.data?.favObj)
+      
+     
+    };
+    
+    getData();
+  }, []);
+  console.log("user in dashboard",user)
   const [match, setMatch] = React.useState(false);
   // const [pref, setPref] = React.useState(false);
   // const [fav, setFav] = React.useState(0);
@@ -90,11 +107,12 @@ export default function Dashboard({ setIsLoggedin, isLoggedin }) {
      </div>
      
        <div class = "switch">
+       <Typography variant="h6" color="black">{user}  </Typography>
         {/* <button class="See" onClick={handleClick}> */}
        
  
        
-        {match ? <Typography variant="h6" color="white">Preferences  </Typography> : <Typography variant="h6" color="white">Matches  </Typography>  }
+        {match ? <Typography variant="h6" color="black">Preferences  </Typography> : <Typography variant="h6" color="black">Matches  </Typography>  }
        
           {/* </button> */}
           <Switch onChange = {handleClick}  />

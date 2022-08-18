@@ -19,12 +19,12 @@ import MatchGrid from "./Matches/MatchGrid"
 import Dashboard from "./Dashboard/Dashboard";
 function App() {
   const [count, setCount] = useState(0);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState("");
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
   const [isLoggedin, setIsLoggedin] = useState(false);
-
+  console.log("user in app",user)
   return (
     <div className="app">
       <BrowserRouter>
@@ -50,20 +50,22 @@ function App() {
               element={
                 <SignUp
                   setUser={setUser}
-                  user={user}
+                  user1={user}
                   setIsLoggedin={setIsLoggedin}
                   isLoggedin={isLoggedin}
                 />
               }
             />
-            <Route path="/log-in" element={<SignIn />} />
+            <Route path="/log-in" element={<SignIn setUser={setUser} user1={user} />} />
+            <Route path="/Dashboard" element={<Dashboard setIsLoggedin={setIsLoggedin}
+            isLoggedin={isLoggedin} setUser={setUser} user={user} />} />
+           
             {/* <Route path="/log-in" element={<S />} /> */}
             <Route path="/preference" element={<Preference setIsLoggedin={setIsLoggedin}
             isLoggedin={isLoggedin} />} />
             <Route path="/matchGrid" element={<MatchGrid setIsLoggedin={setIsLoggedin}
             isLoggedin={isLoggedin} />} />
-            <Route path="/Dashboard" element={<Dashboard setIsLoggedin={setIsLoggedin}
-            isLoggedin={isLoggedin} />} />
+           
             {/* <Route path="/activity" element={<Activity setIsLoggedin = {setIsLoggedin} isLoggedin = {isLoggedin} />} /> */}
           </Routes>
         </main>

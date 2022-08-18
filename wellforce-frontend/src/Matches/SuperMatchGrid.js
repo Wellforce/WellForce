@@ -8,6 +8,7 @@ import RecipeReviewCard3 from "./SuperMatchCard";
 export default function FavMatches2(props) {
   const [matchedUsers, setMatchedUsers] = React.useState([]);
   const [filteredUsers,setFilteredUsers] = React.useState([]);
+  const [pushed, setPushed] = React.useState([])
   //need to input like in order to
   //need to get l
   const getSuper = async (matched) => {
@@ -57,11 +58,12 @@ export default function FavMatches2(props) {
       console.log("superLikeId infiltered matches:",result5)
       console.log("filtered element",element)
       //setFilteredUsers(result2)
-      const arr = await Obj.push(element);
+      const arr = Obj.push(element);
+      setPushed(Obj.push(element))
         
       //obj suppose to have all users objects that 
     }
-    console.log("end of function")
+    console.log("end of function", pushed)
 
     return superLikeId === element.liked_id;
     
@@ -73,24 +75,24 @@ export default function FavMatches2(props) {
  var count = 0
 useEffect(() => {
   console.log("filteredMatches: ",filteredUsers)
-  console.log("final array ", Obj)
-  Obj = Obj
+  console.log("final array ", pushed)
+
   
   count++
   console.log("count",count)
   }, []);
   // const res = await apiClient.superMatch(matchedUsers.liked_id);
- 
+  console.log("outside use effect final array",pushed)
   return (
    
     <div className="product-grid">
-       { count == 2 ? 
+      
       <div className="product-grid-wrapper">
         {Obj.map((element, index) => (
           <RecipeReviewCard3 matchedUser={element} />
         ))}
       </div>
-         : "" },
+       
     </div>
   
   );

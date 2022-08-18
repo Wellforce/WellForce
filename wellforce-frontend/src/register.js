@@ -52,7 +52,7 @@ const theme = createTheme({
   },
 });
 
-export default function SignUp() {
+export default function SignUp({setUser, user }) {
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -70,7 +70,9 @@ export default function SignUp() {
     
     const res = await axios.post("http://localhost:3001/auth/register", user);
     if (res?.data?.user){
+      console.log("response;",res?.data?.user)
       apiClient.setToken(res.data.token)
+       setUser(res.data.firstName)
       console.log("log tokens: ", res.data)
       navigate("/preference")
     } 

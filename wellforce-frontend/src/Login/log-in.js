@@ -37,7 +37,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignIn() {
+export default function SignIn({setUser ,user1}) {
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -51,6 +51,11 @@ export default function SignIn() {
     const res = await axios.post("http://localhost:3001/auth/log-in", user);
     if (res?.data?.user) {
       apiClient.setToken(res.data.token)
+      console.log("response in log-in;",res?.data?.user)
+      apiClient.setToken(res.data.token)
+
+       setUser(res.data.firstName)
+      
       navigate("/preference");
     }
     console.log({
@@ -58,7 +63,7 @@ export default function SignIn() {
       password: data.get("password"),
     });
   };
-
+  console.log("log tokens: ", user1)
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">

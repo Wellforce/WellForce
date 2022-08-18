@@ -69,7 +69,10 @@ const [prefExist, setPrefExist] = useState(false);
   }
   console.log("pref Exist;",prefExist.isPrefChecked)
   function handleOnSubmit() {
-    if (prefExist.isPrefChecked) {
+    if (checkedItems.split(",").length != 5) {
+      window.alert("Please click on 5 items"); }
+
+   else  if (prefExist.isPrefChecked) {
       console.log("does pref exist work in handleOnSubmit",prefExist)
       console.log("user already has preferences preferences will be updated");
       apiClient.UpdatePreferences(checkedArray);
@@ -85,7 +88,7 @@ const [prefExist, setPrefExist] = useState(false);
   return (
     <div className="app">
       <div className="checkList">
-        <div className="title">Select your Wellness Activities:</div>
+        <div className="title">Select your Wellness Activities (Please Select five):</div>
         <div className="list-container">
           {checkList.map((item, index) => (
             <div key={index}>
