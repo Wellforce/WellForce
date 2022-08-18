@@ -63,10 +63,11 @@ const settings = ["Edit Preferences", "Logout"];
 
 export default function Dashboard({ setIsLoggedin, isLoggedin }) {
   const [match, setMatch] = React.useState(false);
-  const [pref, setPref] = React.useState(false);
-  const [fav, setFav] = React.useState(0);
-
+  // const [pref, setPref] = React.useState(false);
+  // const [fav, setFav] = React.useState(0);
+   setIsLoggedin(true)
   function handleClick() {
+    
     if (match) {
       setMatch(false);
     } else {
@@ -74,43 +75,40 @@ export default function Dashboard({ setIsLoggedin, isLoggedin }) {
     }
     console.log("on click match ", match);
   }
-  function handleClick1() {
-    if (fav) {
-      setFav(false);
-    } else {
-      setFav(true);
-    }
-    console.log("on click favorite ", fav);
-  }
+  // function handleClick1() {
+  //   if (fav) {
+  //     setFav(false);
+  //   } else {
+  //     setFav(true);
+  //   }
+  //   console.log("on click favorite ", fav);
+  // }
 
   return (
     
     <div class="dashboard">
-      
-      <div class="sidebar">
+       <div class="sidebar">
      
-        <div>
+       
+         
+     </div>
+     
+       <div class = "switch">
         {/* <button class="See" onClick={handleClick}> */}
-        <Typography variant="h6" color="#032E61">
+       
  
        
-        {match ?"Preferences" :"Matches"  }
-        </Typography>
+        {match ? <Typography variant="h6" color="white">Preferences  </Typography> : <Typography variant="h6" color="white">Matches  </Typography>  }
+       
           {/* </button> */}
           <Switch onChange = {handleClick}  />
         </div>
 
         <div>
-         
-        </div>
-        <img
-            style= {{"max-width":"100%","border-radius":"0px", "width":"100%", "display":"flexbox", "marginTop":"22%", "marginBottom":"-50%"}}
-            alt="grass"
-            src=	{nature}
-          ></img>
+     
       </div>
       <div class = "superLiked">
-      
+      <FavMatches2></FavMatches2>
 
 
       </div>

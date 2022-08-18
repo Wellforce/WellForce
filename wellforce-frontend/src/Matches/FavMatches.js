@@ -11,15 +11,13 @@ export default function FavMatches(props){
    const getData = async () => { 
    const result = await apiClient.request({endpoint:`likes`})
    setMatchedUsers(result?.data?.favObj)
-   console.log("matchedUsers",matchedUsers)
+  // console.log("matchedUsers",matchedUsers)
   }
   getData()
   },[]); 
-  useEffect( () =>{
-    console.log("hello")
-    console.log("matchedUsers in matchGrid",matchedUsers)
+ 
 
-  },[matchedUsers]); 
+  
   return(
              <div className="product-grid">
                 <div className="product-grid-wrapper">

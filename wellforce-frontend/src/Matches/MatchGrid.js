@@ -11,13 +11,13 @@ export default function MatchGrid(props){
    const getData = async () => { 
    const result = await apiClient.request({endpoint:`preference/testing`})
    setMatchedUsers(result?.data?.Preference)
-   console.log("matchedUsers",matchedUsers)
+   //console.log("matchedUsers",matchedUsers)
   }
   getData()
   },[]); 
   useEffect( () =>{
-    console.log("hello")
-    console.log("matchedUsers in matchGrid",matchedUsers)
+    //console.log("hello")
+    //console.log("matchedUsers in matchGrid",matchedUsers)
 
   },[matchedUsers]); 
   

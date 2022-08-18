@@ -16,7 +16,7 @@ import axios from "axios";
   }
   
  async request({ endpoint, method = `GET`, data = {} }) {
-  console.log("data in apiclient", data)
+  //console.log("data in apiclient", data)
     const url = `${this.remoteHostUrl}/${endpoint}`;
 
     const headers = {
@@ -30,7 +30,7 @@ import axios from "axios";
     if (this.token) {
       headers["Authorization"] = `Bearer ${this.token}`;
     }
-    console.log("headers",headers)
+    //console.log("headers",headers)
     try {
       const res = await axios({ url, method, data, headers });
       return { data: res.data, error: null };
@@ -97,23 +97,23 @@ import axios from "axios";
 
   }
   async checkIfLikeExists(liked_id){
-    console.log("liked id in check:",liked_id)
+    
 
     return await this.request({
       endpoint: `likes/checkLiked/${liked_id}`,
       method: `GET`,
       
-  },console.log("in api client check if like exist"))
+  },)
   }
   
   async superMatch(liked_id){
-    console.log("liked id in check:",liked_id)
+    console.log("liked id in super liked:",liked_id)
 
     return await this.request({
       endpoint: `likes/super/${liked_id}`,
       method: `GET`,
       
-  },console.log("in api client check if superlike exist"))
+  },)
   }
 
 }

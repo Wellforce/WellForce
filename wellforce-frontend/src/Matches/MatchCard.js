@@ -62,18 +62,19 @@ export default function RecipeReviewCard({ matchedUser }) {
  
 
   async function handleClick() {  
-    console.log("like status before:" , like)
+    // console.log("like status before:" , like)
     const res = await apiClient.updateLike(!like,matchedUser.user_id)
-    console.log("res in MatchCard333",res)
+    // console.log("res in MatchCard333",res)
     setLike(!like)
-    console.log("like status after:" , like)
+    // console.log("like status after:" , like)
+    window.location.reload();
   }
 
   useEffect(() => {
     const getLikeStatus = async () => {
       const res = await apiClient.checkIfLikeExists(matchedUser.user_id);
-      console.log("matched user: ",matchedUser.user_id)
-      console.log("res in matchCard:",res)
+      // console.log("matched user: ",matchedUser.user_id)
+      // console.log("res in matchCard:",res)
        setLike(res.data.favObj);
     };
     getLikeStatus();

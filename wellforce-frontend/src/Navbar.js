@@ -52,7 +52,7 @@ console.log("in register");
 //   }
 // }, [user, navigate])
 
-const pages = ["register", "log-in","Matches"];
+const pages = ["register", "log-in"];
 const settings = ["Logout"];
 
 export default function Navbar({ setIsLoggedin, isLoggedin, initial }) {
@@ -68,7 +68,7 @@ export default function Navbar({ setIsLoggedin, isLoggedin, initial }) {
   };
   
   const HandleOnClick = () => {
-    
+    setIsLoggedin(false)
     apiClient.removeToken()
     navigate("/")
    
@@ -109,7 +109,7 @@ export default function Navbar({ setIsLoggedin, isLoggedin, initial }) {
             {/* Wellforce logo */}
             <img width="200" height="100" src={wellforcelogo2}></img>
           </Typography>
-
+         
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -141,9 +141,11 @@ export default function Navbar({ setIsLoggedin, isLoggedin, initial }) {
                 display: { xs: "block", md: "none",  },
               }}
             >
+           
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
+                
                 </MenuItem>
               ))}
             </Menu>
@@ -168,7 +170,7 @@ export default function Navbar({ setIsLoggedin, isLoggedin, initial }) {
           >
             LOGO
           </Typography>
-
+          {isLoggedin ? "":
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               // <a href={`http://localhost:3001/${page}`} target="_blank" rel="noreferrer" >
@@ -190,10 +192,10 @@ export default function Navbar({ setIsLoggedin, isLoggedin, initial }) {
               // </a>
             ))}
           </Box>
-      
+         }
 
-          {/* {isLoggedin ?  */}
-          <Box sx={{ flexGrow: 0 }}>
+           {isLoggedin ?  
+          <Box sx={{ flexGrow: 0, ml: 150 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp"> {initial ? initial : null}  </Avatar>
@@ -230,7 +232,7 @@ export default function Navbar({ setIsLoggedin, isLoggedin, initial }) {
               ))}
             </Menu>
           </Box>
-          {/* :  ""} */}
+           :  ""} 
         </Toolbar>
       </Container>
     </AppBar>

@@ -6,7 +6,7 @@
 
 }
 
-.sidebar {
+/* .sidebar {
     margin-top: 90px;
     height: 100%;
     width: 1790px;
@@ -25,7 +25,7 @@
     display: block;
     position: relative; 
     top: 300px;
-    }
+    } */
     
     .body-text {
     margin-left: 150px;
@@ -95,10 +95,10 @@
         height: 110px;
         overflow: auto;
         text-align:justify;
-        margin-top: 200px;
+        margin-top: 300px;
         margin-bottom: 300px;
         margin-left: 1250px;
-        height: 70%;
+        height: 60%;
         width: 350px;
         position: absolute;
         right: 300;
@@ -107,4 +107,8 @@
         background-color: salmon;
         background-color: salmon
 
+      }
+      .switch{
+          margin-left: 350px;
+        margin-top: 60px;
       }

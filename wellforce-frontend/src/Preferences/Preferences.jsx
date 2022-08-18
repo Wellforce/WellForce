@@ -5,7 +5,8 @@ import "./Preferences.css";
 import ApiClient from "../Services/apiClient";
 import { useNavigate } from "react-router";
 import apiClient from "../Services/apiClient";
-export default function Preference() {
+export default function Preference({isLoggedin, setIsLoggedin}) {
+
   const Navigate = useNavigate();
   const [checked, setChecked] = useState([]);
   const checkList = [
@@ -77,7 +78,7 @@ const [prefExist, setPrefExist] = useState(false);
       Navigate("/preference");
     } else {
       ApiClient.postPreferences(checkedArray);
-      Navigate("/MatchGrid");
+      Navigate("/Dashboard");
     }
   }
 
