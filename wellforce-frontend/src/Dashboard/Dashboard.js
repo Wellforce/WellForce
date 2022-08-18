@@ -29,6 +29,7 @@ import { Link } from "react-router-dom";
 import { pink } from "@mui/material/colors";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Matches from "../Matches/Matches";
+import { flexbox } from "@mui/system";
 
 const theme = createTheme({
   status: {
@@ -83,7 +84,9 @@ export default function Dashboard({ setIsLoggedin, isLoggedin }) {
   }
 
   return (
+    
     <div class="dashboard">
+      
       <div class="sidebar">
      
         <div>
@@ -100,11 +103,14 @@ export default function Dashboard({ setIsLoggedin, isLoggedin }) {
         <div>
          
         </div>
-        
+        <img
+            style= {{"max-width":"100%","border-radius":"0px", "width":"100%", "display":"flexbox", "marginTop":"22%", "marginBottom":"-50%"}}
+            alt="grass"
+            src=	{nature}
+          ></img>
       </div>
       <div class = "superLiked">
       
-
 
 
       </div>
@@ -118,6 +124,7 @@ export default function Dashboard({ setIsLoggedin, isLoggedin }) {
         {<FavMatches></FavMatches>}
      
       </div> 
+      
     </div>
   );
 }

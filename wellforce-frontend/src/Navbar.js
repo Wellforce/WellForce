@@ -55,7 +55,7 @@ console.log("in register");
 const pages = ["register", "log-in","Matches"];
 const settings = ["Logout"];
 
-export default function Navbar({ setIsLoggedin, isLoggedin }) {
+export default function Navbar({ setIsLoggedin, isLoggedin, initial }) {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);

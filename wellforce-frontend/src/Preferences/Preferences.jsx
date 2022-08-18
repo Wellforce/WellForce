@@ -85,6 +85,7 @@ const [prefExist, setPrefExist] = useState(false);
     <div className="app1">
       <div className="checkList">
         <div className="title">Select your Wellness Activities:</div>
+        <div className="proTip">Protip: Choose a mix of Wellness activities that are mental and physical to get the best possible match!</div>
         <div className="list-container">
           {checkList.map((item, index) => (
             <div key={index}>
