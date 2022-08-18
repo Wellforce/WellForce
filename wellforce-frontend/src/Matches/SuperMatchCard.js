@@ -41,25 +41,7 @@ export default function RecipeReviewCard3({ matchedUser }) {
   const arr = [matchedUser.user_id];
  
 
-  async function handleClick() {  
-    console.log("like status before:" , like)
-    const res = await apiClient.updateLike(!like,matchedUser.user_id)
-    console.log("res in MatchCard333",res)
-    setLike(!like)
-    console.log("like status after:" , like)
-  }
 
-  useEffect(() => {
-    const getLikeStatus = async () => {
-      const res = await apiClient.checkIfLikeExists(matchedUser.user_id);
-      console.log("matched user: ",matchedUser.user_id)
-      console.log("res in matchCard:",res)
-       setLike(res.data.favObj);
-    };
-    getLikeStatus();
-  }, []);
-   
-     
  
 
   return (
@@ -98,17 +80,7 @@ export default function RecipeReviewCard3({ matchedUser }) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton
-          aria-label="add to favorites"
-          onClick={handleClick}
-          disabled = {like <0}
-          style={{
-            backgroundColor: like ? "salmon" : "",
-            color: like ?"lightblue"  : "",
-          }}
-        >
-          <FavoriteIcon />
-        </IconButton>
+       
         <IconButton
           aria-label="share"
           onClick={() => {

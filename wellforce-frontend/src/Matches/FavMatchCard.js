@@ -35,11 +35,11 @@ const ExpandMore = styled((props) => {
 export default function RecipeReviewCard2({matchedUser}) {
   const[likes,setLikes] = useState(false);
   
-  console.log("Favorite matches in card",matchedUser)
+  // console.log("Favorite matches in card",matchedUser)
   useEffect( () =>{
-    console.log("hello")
+   // console.log("hello")
 
-console.log("Favorite matchesin card",matchedUser)
+// console.log("Favorite matchesin card",matchedUser)
 
   },[matchedUser]); 
   const [expanded, setExpanded] = React.useState(false);
@@ -73,8 +73,9 @@ console.log("Favorite matchesin card",matchedUser)
             <MoreVertIcon />
           </IconButton>
         }
-        sx 
-        color = 'red'
+        sx ={{
+        color : 'white'
+        }}
         title={matchedUser? matchedUser.first_name :null}
       
       />
