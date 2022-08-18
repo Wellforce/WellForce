@@ -14,12 +14,13 @@ class SendEmails {
       [user_id]
     );
     const matchedUsers = result1.rows;
+    console.log("Here are the matched Users",matchedUsers)
     cron.schedule(`* * * * *`, () => {
       const sgMail = require("@sendgrid/mail");
       sgMail.setApiKey(process.env.SENDGRID_API_KEY);
       const msg = {
         to: "abdirahman.2017792@gmail.com", // Change to your recipient
-        from: "abdirahman.2017792@gmail.com", // Change to your verified sender
+        from: "wellnessdemo48@gmail.com", // Change to your verified sender
         subject: "Liked Users and Super Liked Users",
 
         html: `<html>

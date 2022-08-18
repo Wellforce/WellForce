@@ -79,7 +79,7 @@ const [prefExist, setPrefExist] = useState(false);
       Navigate("/preference");
     } else {
       ApiClient.postPreferences(checkedArray);
-      Navigate("/MatchGrid");
+      Navigate("/matchgrid");
     }
   }
 
@@ -87,7 +87,7 @@ const [prefExist, setPrefExist] = useState(false);
   return (
     <div className="app">
       <div className="checkList">
-        <div className="title">Select your Wellness Activities:</div>
+        <div className="title">Select your Wellness Activities (Please Select Five):</div>
         <div className="list-container">
           {checkList.map((item, index) => (
             <div key={index}>
@@ -106,6 +106,10 @@ const [prefExist, setPrefExist] = useState(false);
         >
           Submit
         </button>
+        <p className="Under_Text"> Pro Tip: Please Select a wider range of Wellness Activities like including some
+          Physical activities with your Mental ones and Vice versa.
+          
+           </p>
       </div>
     </div>
   );

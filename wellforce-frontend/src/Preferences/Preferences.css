@@ -1,6 +1,7 @@
 .title {
     font-size: 22px;
     margin-bottom: 40px;
+    color:black;
   }
   .list-container {
     width: 100%;
@@ -19,6 +20,7 @@
   .checked-item,
   .not-checked-item {
     margin-left: 10px;
+    color:black;
   }
   .checked-item {
     
@@ -44,6 +46,7 @@
   }
   .display-checked {
       margin-bottom: 40px;
+      color:black;
   }
   .btn {
     border: 2px solid black;
@@ -70,4 +73,10 @@
 .app {
    background-color: #DEF1FF;
    height: 1000px;
+}
+.Under_Text{
+  text-shadow: 5px 5px 10px #666;
+  margin-top: 40px;
+  text-align: center;
+  color: Black;
 }
